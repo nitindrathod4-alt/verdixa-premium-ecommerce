@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default async function Success({searchParams}:{searchParams:Promise<{order?:string}>}){const p=await searchParams;return <main className="successPage"><div className="successMark">✓</div><p className="eyebrow">ORDER CONFIRMED</p><h1>Your ritual<br/><em>is on its way.</em></h1><p>Thank you for choosing Verdixa. Your order number is <strong>{p.order||"confirmed"}</strong>.</p><Link className="primary" href="/shop">Continue shopping</Link></main>}
