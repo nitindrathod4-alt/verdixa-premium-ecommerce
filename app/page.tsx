@@ -49,6 +49,6 @@ return <main className="singleHome">
 <div id="story"><p className="eyebrow">Our philosophy</p><strong>Trust in what you consume.</strong><small>Transparency · restraint · respect for the plant.</small></div>
 <div id="ritual"><p className="eyebrow">Daily ritual</p><strong>Scoop · Steep · Infuse</strong><small>Make wellness part of your day.</small></div>
 </section>
-<footer className="singleFooter"><span>VERDIXA®</span><small>Nature’s Wellness, Made a Daily Ritual. · © 2026</small><span>V / 2026</span></footer>
+<footer className="singleFooter"><div><span>VERDIXA®</span><small>Nature’s Wellness, Made a Daily Ritual. · © 2026</small></div><div className="contactFooter"><span>CONTACT</span><a href="tel:+919999999999">+91 99999 99999</a><a href="mailto:hello@verdixaa.com">hello@verdixaa.com</a></div><span>V / 2026</span></footer>
 </main>
 }
