@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./checkout/checkout.css";
+import "./admin/admin.css";
+import "./checkout/checkout.css";
 
 export const metadata: Metadata = {
   title: "Verdixa — Nature’s Wellness, Made a Daily Ritual",
