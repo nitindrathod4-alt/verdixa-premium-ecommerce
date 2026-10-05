@@ -1,0 +1,1 @@
+export default function WhatsAppButton(){const phone=process.env.NEXT_PUBLIC_WHATSAPP_NUMBER; if(!phone)return null; return <a className="whatsappButton" href={`https://wa.me/${phone}`} target="_blank" rel="noreferrer" aria-label="Chat with Verdixa on WhatsApp">WhatsApp</a>}
