@@ -2342,3 +2342,65 @@ footer a:hover{opacity:.55}
   .home-product-actions .btn-primary,
   .home-product-actions .btn-secondary{width:100%}
 }
+
+
+/* ================= VERDIXA PRODUCTS SECTION LAYOUT FINAL ================= */
+.block.products{
+  display:block !important;
+  width:100%;
+}
+.block.products > .wrap{
+  width:100%;
+  max-width:1280px;
+  margin:0 auto;
+  padding-left:32px;
+  padding-right:32px;
+}
+.block.products .prod-grid{
+  display:grid !important;
+  width:100%;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:64px !important;
+}
+.block.products .prod-card{
+  width:100%;
+}
+.block.products .prod-card .frame{
+  width:100%;
+  height:520px;
+  aspect-ratio:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.block.products .prod-card .frame img{
+  width:100%;
+  height:100%;
+  object-fit:contain !important;
+  object-position:center !important;
+  padding:24px;
+}
+.block.products .home-product-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  width:100%;
+}
+.block.products .home-product-actions button{
+  width:100%;
+  margin:0;
+}
+@media(max-width:900px){
+  .block.products > .wrap{
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .block.products .prod-grid{
+    grid-template-columns:1fr !important;
+    gap:56px !important;
+  }
+  .block.products .prod-card .frame{
+    height:500px;
+  }
+}
