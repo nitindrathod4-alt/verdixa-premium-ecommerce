@@ -11,7 +11,16 @@ export default function Home(){
     window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
     const io=new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.15});
     document.querySelectorAll(".reveal").forEach((el,i)=>{el.style.transitionDelay=(i%3)*.08+"s";io.observe(el);});
-    return ()=>{window.removeEventListener("scroll",onScroll);io.disconnect();};
+    const form=document.querySelector("form.card");
+    const onSubmit=(event)=>{
+      event.preventDefault();
+      const name=(document.getElementById("cName") as HTMLInputElement)?.value.trim();
+      const msg=document.getElementById("formMsg");
+      if(msg) msg.textContent=name ? "Message sent — thank you, "+name.split(" ")[0]+"! We'll be in touch soon." : "";
+      (form as HTMLFormElement)?.reset();
+    };
+    form?.addEventListener("submit",onSubmit as EventListener);
+    return ()=>{window.removeEventListener("scroll",onScroll);io.disconnect();form?.removeEventListener("submit",onSubmit as EventListener);};
   },[]);
   return <div dangerouslySetInnerHTML={{__html:HOME_HTML}}/>;
 }
