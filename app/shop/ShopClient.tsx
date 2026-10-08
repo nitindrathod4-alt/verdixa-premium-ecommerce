@@ -1,17 +1,124 @@
 "use client";
-import {useMemo,useState} from "react";
+
+import {useEffect,useMemo,useState} from "react";
 import Link from "next/link";
 import {AnimatePresence,motion} from "framer-motion";
 import {Minus,Plus,ShoppingBag,X,ArrowRight} from "lucide-react";
 import {getFreeShippingProgress,getShipping,getTotal} from "@/lib/commerce";
 import {products} from "@/lib/products";
 
-const photoStyle={width:"100%",height:"100%",objectFit:"contain" as const,display:"block",mixBlendMode:"multiply" as const,background:"#ece8df",padding:"18px"};
+const CART_KEY="verdixa_cart";
 
 export default function ShopClient(){
- const [bag,setBag]=useState<Record<string,number>>({}); const [open,setOpen]=useState(false);
- const items=useMemo(()=>products.filter(p=>bag[p.slug]).map(p=>({...p,quantity:bag[p.slug]})),[bag]);
- const subtotal=items.reduce((s,p)=>s+p.price*p.quantity,0); const shipping=getShipping(subtotal); const total=getTotal(subtotal,"prepaid"); const progress=getFreeShippingProgress(subtotal);
- const add=(slug:string)=>{setBag(b=>({...b,[slug]:(b[slug]||0)+1}));setOpen(true)}; const change=(slug:string,n:number)=>setBag(b=>{const next={...b}; if(n<=0)delete next[slug]; else next[slug]=n; return next});
- return <><section className="shopGrid">{products.map(p=><article className="shopCard" key={p.slug}><Link href={"/products/"+p.slug}><div className="shopVisual">{p.imageUrl?<img src={p.imageUrl} alt={p.name} style={photoStyle}/>:<div className="botanicalOrb"/>}<span>{p.category}</span></div></Link><div className="shopCardBody"><div><p className="eyebrow">{p.unit}</p><h2>{p.name}</h2></div><div className="shopPrice">{p.compareAtPrice&&<del>₹{p.compareAtPrice}</del>} ₹{p.price}</div><p>{p.description}</p><div className="shopActions"><Link href={"/products/"+p.slug}>View product</Link><button className="primary" onClick={()=>add(p.slug)}>Add to bag</button></div></div></article>)}</section><AnimatePresence>{open&&<><motion.div className="cartBackdrop" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onClick={()=>setOpen(false)}/><motion.aside className="cartDrawer" initial={{x:"100%"}} animate={{x:0}} exit={{x:"100%"}} transition={{type:"spring",damping:28,stiffness:260}}><header><div><p className="eyebrow">YOUR BAG</p><strong>{items.reduce((n,p)=>n+p.quantity,0)} items</strong></div><button onClick={()=>setOpen(false)}><X/></button></header>{items.length===0?<div className="cartEmpty"><ShoppingBag/><p>Your bag is waiting.</p></div>:<><div className="cartItems">{items.map(p=><div className="cartItem" key={p.slug}><div className="cartThumb">{p.imageUrl&&<img src={p.imageUrl} alt="" style={{width:"100%",height:"100%",objectFit:"contain",mixBlendMode:"multiply",background:"#ece8df"}}/>}</div><div className="cartItemInfo"><strong>{p.name}</strong><small>₹{p.price} · {p.unit}</small><div className="qty"><button onClick={()=>change(p.slug,p.quantity-1)}><Minus/></button><span>{p.quantity}</span><button onClick={()=>change(p.slug,p.quantity+1)}><Plus/></button></div></div><b>₹{p.price*p.quantity}</b></div>)}</div><div className="shippingProgress"><div><span>{subtotal>=799?"Free shipping unlocked":"Free shipping"}</span><b>{subtotal>=799?"✓":"₹"+Math.max(0,799-subtotal)+" away"}</b></div><i><em style={{width:progress+"%"}}/></i></div><div className="cartTotals"><span>Subtotal <b>₹{subtotal}</b></span><span>Shipping <b>{shipping?"₹"+shipping:"FREE"}</b></span><strong>Total <b>₹{total}</b></strong></div><Link className="primary cartCheckout" href="/checkout">Checkout <ArrowRight size={15}/></Link></>}</motion.aside></motion.div>}</AnimatePresence></>
+  const [bag,setBag]=useState<Record<string,number>>({});
+  const [open,setOpen]=useState(false);
+
+  useEffect(()=>{
+    try{
+      const saved=localStorage.getItem(CART_KEY);
+      if(saved)setBag(JSON.parse(saved));
+    }catch{}
+  },[]);
+
+  useEffect(()=>{
+    localStorage.setItem(CART_KEY,JSON.stringify(bag));
+  },[bag]);
+
+  const items=useMemo(
+    ()=>products.filter(p=>bag[p.slug]).map(p=>({...p,quantity:bag[p.slug]})),
+    [bag]
+  );
+  const subtotal=items.reduce((s,p)=>s+p.price*p.quantity,0);
+  const shipping=getShipping(subtotal);
+  const total=getTotal(subtotal,"prepaid");
+  const progress=getFreeShippingProgress(subtotal);
+
+  const add=(slug:string)=>{
+    setBag(b=>({...b,[slug]:(b[slug]||0)+1}));
+    setOpen(true);
+  };
+
+  const change=(slug:string,n:number)=>{
+    setBag(b=>{
+      const next={...b};
+      if(n<=0)delete next[slug];
+      else next[slug]=n;
+      return next;
+    });
+  };
+
+  return <>
+    <section className="shopGrid">
+      {products.map(p=>(
+        <article className="shopCard" key={p.slug}>
+          <Link href={"/products/"+p.slug}>
+            <div className="shopVisual">
+              {p.imageUrl
+                ? <img src={p.imageUrl} alt={p.name} style={{width:"100%",height:"100%",objectFit:"contain",display:"block",mixBlendMode:"multiply",background:"#ece8df",padding:"18px"}}/>
+                : <div className="botanicalOrb"/>
+              }
+              <span>{p.category}</span>
+            </div>
+          </Link>
+          <div className="shopCardBody">
+            <div>
+              <p className="eyebrow">{p.unit}</p>
+              <h2>{p.name}</h2>
+            </div>
+            <div className="shopPrice">{p.compareAtPrice&&<del>₹{p.compareAtPrice}</del>} ₹{p.price}</div>
+            <p>{p.description}</p>
+            <div className="shopActions">
+              <Link href={"/products/"+p.slug}>View product</Link>
+              <button className="primary" onClick={()=>add(p.slug)}>Add to bag</button>
+            </div>
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <AnimatePresence>
+      {open&&<>
+        <motion.div className="cartBackdrop" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} onClick={()=>setOpen(false)}/>
+        <motion.aside className="cartDrawer" initial={{x:"100%"}} animate={{x:0}} exit={{x:"100%"}} transition={{type:"spring",damping:28,stiffness:260}}>
+          <header>
+            <div><p className="eyebrow">YOUR BAG</p><strong>{items.reduce((n,p)=>n+p.quantity,0)} items</strong></div>
+            <button onClick={()=>setOpen(false)}><X/></button>
+          </header>
+
+          {items.length===0
+            ? <div className="cartEmpty"><ShoppingBag/><p>Your bag is waiting.</p></div>
+            : <>
+              <div className="cartItems">
+                {items.map(p=>(
+                  <div className="cartItem" key={p.slug}>
+                    <div className="cartThumb">{p.imageUrl&&<img src={p.imageUrl} alt="" style={{width:"100%",height:"100%",objectFit:"contain",mixBlendMode:"multiply",background:"#ece8df"}}/>}</div>
+                    <div className="cartItemInfo">
+                      <strong>{p.name}</strong>
+                      <small>₹{p.price} · {p.unit}</small>
+                      <div className="qty">
+                        <button onClick={()=>change(p.slug,p.quantity-1)}><Minus/></button>
+                        <span>{p.quantity}</span>
+                        <button onClick={()=>change(p.slug,p.quantity+1)}><Plus/></button>
+                      </div>
+                    </div>
+                    <b>₹{p.price*p.quantity}</b>
+                  </div>
+                ))}
+              </div>
+              <div className="shippingProgress">
+                <div><span>{subtotal>=799?"Free shipping unlocked":"Free shipping"}</span><b>{subtotal>=799?"✓":"₹"+Math.max(0,799-subtotal)+" away"}</b></div>
+                <i><em style={{width:progress+"%"}}/></i>
+              </div>
+              <div className="cartTotals">
+                <span>Subtotal <b>₹{subtotal}</b></span>
+                <span>Shipping <b>{shipping?"₹"+shipping:"FREE"}</b></span>
+                <strong>Total <b>₹{total}</b></strong>
+              </div>
+              <Link className="primary cartCheckout" href="/checkout">Checkout <ArrowRight size={15}/></Link>
+            </>
+          }
+        </motion.aside>
+      </>}
+    </AnimatePresence>
+  </>;
 }
