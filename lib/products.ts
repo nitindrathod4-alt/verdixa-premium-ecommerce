@@ -1,6 +1,42 @@
 export type Product={id:string;slug:string;name:string;price:number;compareAtPrice?:number;unit:string;description:string;category:string;inventory:number;active:boolean;imageUrl?:string};
+
 export const products:Product[]=[
-{id:"moringa",slug:"pure-moringa-powder",name:"Pure Moringa Powder",price:299,unit:"100 G",description:"Pure botanical moringa powder for a simple daily wellness ritual.",category:"Powders",inventory:50,active:true},
-{id:"hibiscus",slug:"hibiscus-herbal-infusion",name:"Hibiscus Herbal Infusion",price:549,compareAtPrice:699,unit:"30 PYRAMID BAGS",description:"A floral herbal infusion crafted for a slow, considered pause.",category:"Infusions",inventory:40,active:true,imageUrl:"/products/hibiscus-tea.jpg"},
-{id:"blue-tea",slug:"butterfly-pea-blue-tea",name:"Butterfly Pea Blue Tea",price:579,compareAtPrice:799,unit:"30 PYRAMID BAGS",description:"A delicate botanical tea for beautiful everyday rituals.",category:"Tea",inventory:35,active:true,imageUrl:"/products/blue-tea.jpg"}
+  {
+    id:"moringa",
+    slug:"pure-moringa-powder",
+    name:"Pure Moringa Powder",
+    price:299,
+    unit:"100 G",
+    description:"Pure botanical moringa powder for your daily wellness ritual.",
+    category:"MORINGA",
+    inventory:50,
+    active:true,
+    imageUrl:"https://images.unsplash.com/photo-1565802700474-1c8b57596859?crop=entropy&cs=srgb&fm=jpg&q=85&w=1000",
+  },
+  {
+    id:"hibiscus",
+    slug:"hibiscus-herbal-infusion",
+    name:"Hibiscus Herbal Infusion",
+    price:549,
+    compareAtPrice:699,
+    unit:"30 PYRAMID BAGS",
+    description:"A vibrant botanical infusion crafted for a beautiful daily ritual.",
+    category:"HIBISCUS",
+    inventory:40,
+    active:true,
+    imageUrl:"/products/hibiscus-tea.jpg",
+  },
+  {
+    id:"blue-tea",
+    slug:"butterfly-pea-blue-tea",
+    name:"Butterfly Pea Blue Tea",
+    price:579,
+    compareAtPrice:799,
+    unit:"30 PYRAMID BAGS",
+    description:"A naturally blue botanical tea with an elegant floral character.",
+    category:"BLUE TEA",
+    inventory:35,
+    active:true,
+    imageUrl:"/products/blue-tea.jpg",
+  },
 ];
