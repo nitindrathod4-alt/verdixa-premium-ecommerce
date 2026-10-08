@@ -5,7 +5,6 @@ import {isAdminRequest} from "@/lib/admin";
 function bodyNumber(v:unknown,fallback=0){const n=Number(v);return Number.isFinite(n)?Math.max(0,Math.round(n)):fallback}
 
 export async function GET(request:Request){
- if(!isAdminRequest(request))return NextResponse.json({error:"Unauthorized"},{status:401});
  const supabase=getSupabaseServer();
  if(!supabase)return NextResponse.json({products:[],source:"preview"});
  const {data,error}=await supabase.from("products").select("*").order("created_at",{ascending:false});
