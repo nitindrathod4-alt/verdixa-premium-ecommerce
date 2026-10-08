@@ -2404,3 +2404,8 @@ footer a:hover{opacity:.55}
     height:500px;
   }
 }
+
+
+/* ================= VERDIXA HORIZONTAL OVERFLOW GUARD ================= */
+html,body{max-width:100%;overflow-x:hidden}
+.block.products .prod-grid{max-width:1200px;margin-left:auto;margin-right:auto}
