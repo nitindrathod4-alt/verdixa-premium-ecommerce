@@ -2203,3 +2203,34 @@ footer{padding:55px 7vw;border-top:1px solid var(--line);display:flex;align-item
   .flipCardBack { min-height: 520px; }
   .flipCardBack { padding: 28px; }
 }
+
+
+/* ================= VERDIXA AESOP + APPLE PREMIUM UI ================= */
+/* Preserve the existing Verdixa structure; refine only presentation and interaction. */
+body{font-family:"Manrope",Arial,Helvetica,sans-serif;letter-spacing:.005em}
+.nav{transition:all .45s ease}
+.nav.scrolled{background:rgba(249,248,245,.92);box-shadow:0 10px 35px rgba(20,35,25,.06)}
+.brand,.foot-brand{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;letter-spacing:.06em}
+.hero{isolation:isolate}
+.hero-bg img{transform:scale(1.01);transition:transform 1.8s cubic-bezier(.2,.7,.2,1);filter:saturate(.86) contrast(1.02)}
+.hero:hover .hero-bg img{transform:scale(1.045)}
+.hero-content h1{letter-spacing:-.045em;text-wrap:balance}
+.hero-content .ghost-btn,.ghost-btn{transition:transform .35s ease,background .35s ease,border-color .35s ease}
+.hero-content .ghost-btn:hover,.ghost-btn:hover{transform:translateY(-2px);background:rgba(244,241,234,.1);border-color:rgba(244,241,234,.7)}
+.prod-card{transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.prod-card:hover{transform:translateY(-6px)}
+.prod-card .frame{overflow:hidden}
+.prod-card .frame img{transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s ease}
+.prod-card:hover .frame img{transform:scale(1.035);filter:saturate(.94)}
+.prod-tags span{backdrop-filter:blur(8px)}
+.btn-primary{transition:transform .3s ease,background .3s ease,letter-spacing .3s ease}
+.btn-primary:hover{transform:translateY(-2px);letter-spacing:.16em}
+.marquee{letter-spacing:.16em}
+.contact .card{box-shadow:0 24px 70px rgba(20,35,25,.08)}
+footer a{transition:opacity .25s ease}
+footer a:hover{opacity:.55}
+@media(max-width:900px){
+  .hero-bg img{transform:none}
+  .hero:hover .hero-bg img{transform:none}
+  .prod-card:hover{transform:none}
+}
