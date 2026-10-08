@@ -12,6 +12,7 @@ const CART_KEY="verdixa_cart";
 export default function ShopClient(){
   const [bag,setBag]=useState<Record<string,number>>({});
   const [open,setOpen]=useState(false);
+  const [flipped,setFlipped]=useState<string|null>(null);
 
   useEffect(()=>{
     try{
@@ -50,26 +51,48 @@ export default function ShopClient(){
   return <>
     <section className="shopGrid">
       {products.map(p=>(
-        <article className="shopCard" key={p.slug}>
-          <Link href={"/products/"+p.slug}>
-            <div className="shopVisual">
-              {p.imageUrl
-                ? <img src={p.imageUrl} alt={p.name} style={{width:"100%",height:"100%",objectFit:"contain",display:"block",mixBlendMode:"multiply",background:"#ece8df",padding:"18px"}}/>
-                : <div className="botanicalOrb"/>
-              }
-              <span>{p.category}</span>
+        <article className={"shopCard flipCard "+(flipped===p.slug?"isFlipped":"")} key={p.slug}>
+          <div className="flipCardInner">
+            <div className="flipCardFront">
+              <Link href={"/products/"+p.slug}>
+                <div className="shopVisual">
+                  {p.imageUrl
+                    ? <img src={p.imageUrl} alt={p.name} style={{width:"100%",height:"100%",objectFit:"contain",display:"block",mixBlendMode:"multiply",background:"#ece8df",padding:"18px"}}/>
+                    : <div className="botanicalOrb"/>
+                  }
+                  <span>{p.category}</span>
+                </div>
+              </Link>
+              <div className="shopCardBody">
+                <div>
+                  <p className="eyebrow">{p.unit}</p>
+                  <h2>{p.name}</h2>
+                </div>
+                <div className="shopPrice">{p.compareAtPrice&&<del>₹{p.compareAtPrice}</del>} ₹{p.price}</div>
+                <p>{p.description}</p>
+                <div className="shopActions">
+                  <Link href={"/products/"+p.slug}>View product</Link>
+                  <button className="primary" onClick={()=>add(p.slug)}>Add to bag</button>
+                  <button className="flipButton" type="button" onClick={()=>setFlipped(p.slug)}>Details ↻</button>
+                </div>
+              </div>
             </div>
-          </Link>
-          <div className="shopCardBody">
-            <div>
-              <p className="eyebrow">{p.unit}</p>
-              <h2>{p.name}</h2>
-            </div>
-            <div className="shopPrice">{p.compareAtPrice&&<del>₹{p.compareAtPrice}</del>} ₹{p.price}</div>
-            <p>{p.description}</p>
-            <div className="shopActions">
-              <Link href={"/products/"+p.slug}>View product</Link>
-              <button className="primary" onClick={()=>add(p.slug)}>Add to bag</button>
+            <div className="flipCardBack">
+              <div>
+                <p className="eyebrow">VERDIXA BOTANICAL</p>
+                <h2>{p.name}</h2>
+                <p>{p.description}</p>
+                <div className="flipFacts">
+                  <span><b>Category</b>{p.category}</span>
+                  <span><b>Pack</b>{p.unit}</span>
+                  <span><b>Price</b>₹{p.price}</span>
+                  {p.compareAtPrice&&<span><b>Save</b>₹{p.compareAtPrice-p.price}</span>}
+                </div>
+              </div>
+              <div className="flipBackActions">
+                <Link href={"/products/"+p.slug}>View full product</Link>
+                <button type="button" onClick={()=>setFlipped(null)}>↩ Back</button>
+              </div>
             </div>
           </div>
         </article>
