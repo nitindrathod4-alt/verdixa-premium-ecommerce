@@ -7,10 +7,10 @@ type Product={id:string;slug:string;name:string;description?:string;price:number
 const empty={slug:"",name:"",description:"",price:"",compareAtPrice:"",unit:"",category:"",inventory:"0",imageUrl:"",active:true};
 
 export default function AdminPage(){
- const [orders,setOrders]=useState<Order[]>([]);const [catalog,setCatalog]=useState<Product[]>([]);const [token,setToken]=useState("");const [loading,setLoading]=useState(false);const [error,setError]=useState("");const [form,setForm]=useState<any>(empty);const [editing,setEditing]=useState<string|null>(null);const [saving,setSaving]=useState(false);const [msg,setMsg]=useState("");
+ const [orders,setOrders]=useState<Order[]>([]);const [catalog,setCatalog]=useState<Product[]>([]);const [token,setToken]=useState("");const [loggedIn,setLoggedIn]=useState(false);const [username,setUsername]=useState("");const [password,setPassword]=useState("");const [loginError,setLoginError]=useState("");const [loginBusy,setLoginBusy]=useState(false);const [loading,setLoading]=useState(false);const [error,setError]=useState("");const [form,setForm]=useState<any>(empty);const [editing,setEditing]=useState<string|null>(null);const [saving,setSaving]=useState(false);const [msg,setMsg]=useState("");
  const headers=()=>({Authorization:"Bearer "+token,"Content-Type":"application/json"});
  async function load(){if(!token)return;setLoading(true);setError("");try{const h={Authorization:"Bearer "+token};const [o,p]=await Promise.all([fetch("/api/admin/orders",{headers:h}),fetch("/api/admin/products",{headers:h})]);const od=await o.json(),pd=await p.json();if(!o.ok||!p.ok)throw new Error(od.error||pd.error||"Invalid admin token or API unavailable.");setOrders(od.orders||[]);setCatalog(pd.products||[])}catch(e){setError(e instanceof Error?e.message:"Unable to load dashboard.")}finally{setLoading(false)}}
- useEffect(()=>{const saved=localStorage.getItem("verdixa_admin_token");if(saved)setToken(saved)},[]);
+ useEffect(()=>{const saved=localStorage.getItem("verdixa_admin_token");if(saved){setToken(saved);setLoggedIn(true)}},[]);
  useEffect(()=>{if(token)load()},[token]);
  const save=()=>{localStorage.setItem("verdixa_admin_token",token);load()};
  const set=(k:string,v:any)=>setForm((x:any)=>({...x,[k]:v}));
@@ -18,8 +18,8 @@ export default function AdminPage(){
  function edit(p:Product){setEditing(p.id);setForm({slug:p.slug,name:p.name,description:p.description||"",price:String(p.price),compareAtPrice:p.compare_at_price==null?"":String(p.compare_at_price),unit:p.unit||"",category:p.category||"",inventory:String(p.inventory),imageUrl:p.image_url||"",active:p.active});window.scrollTo({top:0,behavior:"smooth"})}
  async function remove(id:string){if(!confirm("Delete this product?"))return;const r=await fetch("/api/admin/products",{method:"DELETE",headers:headers(),body:JSON.stringify({id})});const d=await r.json();if(!r.ok){setError(d.error||"Delete failed.");return}await load()}
  async function orderUpdate(id:string,key:string,value:string){const r=await fetch("/api/admin/orders",{method:"PATCH",headers:headers(),body:JSON.stringify({id,[key]:value})});const d=await r.json();if(!r.ok){setError(d.error||"Order update failed.");return}await load()}
- return <main className="adminPage">
- <header className="adminHeader"><div><p className="eyebrow">VERDIXA / CONTROL ROOM</p><h1>Commerce control.</h1><p className="adminSub">A quiet command center for your botanical store.</p></div><div className="adminHeaderRight"><span className="adminLive"><i/> LIVE STORE</span><Link href="/" className="adminBack">View storefront →</Link></div></header>
+ return loggedIn ? <main className="adminPage">
+<header className="adminHeader"><div><p className="eyebrow">VERDIXA / CONTROL ROOM</p><h1>Commerce control.</h1><p className="adminSub">A quiet command center for your botanical store.</p></div><div className="adminHeaderRight"><span className="adminLive"><i/> LIVE STORE</span><button className="adminLogout" onClick={logout}>Logout</button><Link href="/" className="adminBack">View storefront →</Link></div></header>
  <section className="adminAuth"><input value={token} onChange={e=>setToken(e.target.value)} placeholder="Admin dashboard token"/><button className="primary" onClick={save}>Connect</button></section>
  {error&&<p className="adminError">{error}</p>}
  <section className="adminStats"><article className="statPrimary"><span>CATALOG</span><strong>{catalog.length}</strong><small>Active products & drafts</small></article><article><span>ORDERS</span><strong>{orders.length}</strong><small>Latest 100 orders</small></article><article><span>GROSS REVENUE</span><strong>₹{orders.reduce((n,o)=>n+Number(o.total||0),0)}</strong><small>Loaded order value</small></article></section>
