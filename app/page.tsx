@@ -1,104 +1,200 @@
 "use client";
 
-import { ArrowRight, Heart, Leaf, Search, ShieldCheck, ShoppingBag, Truck, UserRound, WalletCards, PackageCheck } from "lucide-react";
+import { ArrowRight, Leaf, ShoppingBag, Truck, ShieldCheck, PackageCheck } from "lucide-react";
 
 const products = [
-  { name: "Botanical Face Wash", meta: "Neem · Tulsi · Vitamin E", price: "₹449", compare: "₹599", tone: "wash", badge: "Bestseller", reviews: "4.8 (1.2k reviews)" },
-  { name: "Natural Face Cream", meta: "Aloe Vera · Green Tea", price: "₹599", compare: "₹749", tone: "cream", badge: "20% OFF", reviews: "4.9 (980 reviews)" },
-  { name: "Radiant Face Serum", meta: "Niacinamide · Hyaluronic Acid", price: "₹699", compare: "₹899", tone: "serum", reviews: "4.8 (760 reviews)" },
+  {
+    slug: "pure-moringa-powder",
+    name: "Pure Moringa Powder",
+    category: "MORINGA",
+    unit: "100 G",
+    price: "₹299",
+    image: "/products/moringa.jpg",
+    fallback: "MORINGA",
+  },
+  {
+    slug: "hibiscus-herbal-infusion",
+    name: "Hibiscus Herbal Infusion",
+    category: "HIBISCUS",
+    unit: "30 PYRAMID BAGS",
+    price: "₹549",
+    compare: "₹699",
+    image: "/products/hibiscus-tea.jpg",
+    fallback: "HIBISCUS",
+  },
+  {
+    slug: "butterfly-pea-blue-tea",
+    name: "Butterfly Pea Blue Tea",
+    category: "BLUE TEA",
+    unit: "30 PYRAMID BAGS",
+    price: "₹579",
+    compare: "₹799",
+    image: "/products/blue-tea.jpg",
+    fallback: "BUTTERFLY PEA",
+  },
 ];
 
 export default function Home() {
   return (
-    <main className="verdixaPage">
-      <div className="verdixaAnnouncement">Free shipping on orders above ₹799 <span>|</span> Cash on Delivery Available <span>|</span> Natural. Ethical. Effective.</div>
+    <main className="botanicalHome">
+      <div className="botanicalAnnouncement">
+        Free shipping on orders above ₹799 <span>•</span> COD available <span>•</span> Botanical wellness, thoughtfully crafted
+      </div>
 
-      <nav className="verdixaNav">
-        <a href="/" className="verdixaLogo"><span className="logoLeaf"><Leaf size={25} /></span>VERDIXA</a>
-        <div className="verdixaNavLinks">
-          <a href="#home">Home</a><a href="#collection">Shop</a><a href="#philosophy">Our Philosophy</a><a href="#ingredients">Ingredients</a><a href="#contact">Track Order</a>
+      <nav className="botanicalNav">
+        <a href="/" className="botanicalLogo">VERDIXA</a>
+        <div className="botanicalNavLinks">
+          <a href="#philosophy">Philosophy</a>
+          <a href="#collection">Collection</a>
+          <a href="#ingredients">Ingredients</a>
+          <a href="#ritual">Ritual</a>
         </div>
-        <div className="verdixaNavActions">
-          <button aria-label="Search"><Search size={23}/></button>
-          <button aria-label="Account"><UserRound size={23}/></button>
-          <button className="verdixaBag" aria-label="Shopping bag"><ShoppingBag size={24}/><b>2</b></button>
-        </div>
+        <a href="/shop" className="botanicalNavBag">
+          <ShoppingBag size={17} />
+          <span>Shop</span>
+        </a>
       </nav>
 
-      <section id="home" className="verdixaHero">
-        <div className="heroContent">
-          <p className="verdixaEyebrow">NATURE MEETS MODERN SKINCARE</p>
-          <h1>Pure Ingredients.<br/><em>Real Results.</em></h1>
-          <p className="verdixaHeroText">Clean, conscious skincare crafted with the power of nature — for naturally radiant, healthy skin.</p>
-          <a href="#collection" className="verdixaPrimary">Shop Now <ArrowRight size={18}/></a>
-          <div className="heroClaims">
-            <span><Leaf size={27}/><b>100% Natural<br/>Ingredients</b></span>
-            <span><ShieldCheck size={27}/><b>Dermatologist<br/>Tested</b></span>
-            <span><Heart size={27}/><b>Cruelty Free<br/>& Vegan</b></span>
+      <section className="botanicalHero">
+        <div className="botanicalHeroCopy">
+          <p className="botanicalEyebrow">NATURE&apos;S GOODNESS, PURELY YOURS</p>
+          <h1>Nourish<br /><em>Naturally,</em><br />Live Fully.</h1>
+          <p className="botanicalLead">
+            Botanical teas and wholefood wellness essentials, thoughtfully crafted for beautiful everyday rituals.
+          </p>
+          <a href="#collection" className="botanicalButton">
+            Explore the range <ArrowRight size={16} />
+          </a>
+        </div>
+
+        <div className="botanicalHeroVisual">
+          <div className="heroOrb heroOrbGreen" />
+          <div className="heroOrb heroOrbRed" />
+          <div className="heroOrb heroOrbBlue" />
+          <div className="heroLeafShape leafOne" />
+          <div className="heroLeafShape leafTwo" />
+          <div className="heroHeroLabel">
+            <span>VERDIXA</span>
+            <small>BOTANICAL<br />WELLNESS</small>
           </div>
-        </div>
-        <div className="heroScene">
-          <div className="heroBackdropLeaf leafA"></div><div className="heroBackdropLeaf leafB"></div><div className="heroRock"></div>
-          <div className="heroProduct heroCream"><span>VERDIXA</span><b>NATURAL FACE CREAM</b><small>Aloe Vera · Green Tea</small></div>
-          <div className="heroProduct heroWash"><span>VERDIXA</span><b>BOTANICAL<br/>FACE WASH</b><small>Neem · Tulsi · Vitamin E</small></div>
-          <div className="heroProduct heroSerum"><span>VERDIXA</span><b>RADIANT<br/>FACE SERUM</b><small>Niacinamide · Hyaluronic Acid</small></div>
-          <div className="heroStamp">SKINCARE<br/>INSPIRED BY<br/>NATURE <Leaf size={17}/></div>
+          <div className="heroCircleStamp">PURE<br />BOTANICALS<br /><Leaf size={15} /></div>
         </div>
       </section>
 
-      <section className="verdixaTrust">
-        <div><Truck size={29}/><span><b>Free Shipping</b>on orders above ₹799</span></div>
-        <div><WalletCards size={29}/><span><b>Cash on Delivery</b>available (₹50 COD charge)</span></div>
-        <div><ShieldCheck size={30}/><span><b>Secure Payments</b>UPI, Cards, Netbanking</span></div>
-        <div><PackageCheck size={29}/><span><b>7-Day Easy Returns</b>Hassle free</span></div>
+      <section className="botanicalTrust">
+        <div><Truck size={21} /><span><b>Free Shipping</b>above ₹799</span></div>
+        <div><ShieldCheck size={21} /><span><b>Secure Payments</b>UPI · Cards · Netbanking</span></div>
+        <div><PackageCheck size={21} /><span><b>Carefully Crafted</b>Botanical wellness</span></div>
+        <div><Leaf size={21} /><span><b>Daily Rituals</b>Simple · intentional · natural</span></div>
       </section>
 
-      <section id="collection" className="verdixaCollection">
-        <div className="collectionHeading">
-          <div><p className="verdixaEyebrow">OUR BESTSELLERS</p><h2>Customer Favorites</h2><p>Skincare essentials loved for their purity, effectiveness and real results.</p></div>
-          <a href="/shop">View All Products <ArrowRight size={16}/></a>
+      <section id="philosophy" className="botanicalSection botanicalManifesto">
+        <div className="botanicalSectionHead">
+          <div>
+            <p className="botanicalEyebrow">OUR PHILOSOPHY</p>
+            <h2>Three promises kept in every <em>leaf and pour.</em></h2>
+          </div>
+          <p>Verdixa brings the quiet beauty of botanicals into simple, considered daily rituals.</p>
         </div>
-        <div className="verdixaProductGrid">
-          {products.map((p) => (
-            <article className="verdixaProductCard" key={p.name}>
-              <div className={`productImage ${p.tone}`}>
-                {p.badge && <span className={`productBadge ${p.tone === "cream" ? "pink" : ""}`}>{p.badge}</span>}
-                <div className="miniProduct"><span>VERDIXA</span><b>{p.name}</b><small>{p.meta}</small></div>
+
+        <div className="botanicalPromises">
+          <article><span>01</span><h3>Pure Botanicals</h3><p>Thoughtfully selected plant ingredients with a clean, uncomplicated approach.</p></article>
+          <article><span>02</span><h3>Considered Craft</h3><p>Every product is designed to feel as beautiful in your ritual as it is on your shelf.</p></article>
+          <article><span>03</span><h3>Everyday Wellness</h3><p>Simple products made to become part of the moments you return to every day.</p></article>
+        </div>
+      </section>
+
+      <div className="botanicalMarquee" aria-hidden="true">
+        <span>BOTANICAL</span><i>✦</i><span>NATURAL</span><i>✦</i><span>MINDFUL</span><i>✦</i><span>EVERYDAY RITUAL</span><i>✦</i><span>BOTANICAL</span><i>✦</i>
+      </div>
+
+      <section id="collection" className="botanicalSection botanicalCollection">
+        <div className="botanicalSectionHead">
+          <div>
+            <p className="botanicalEyebrow">THE COLLECTION</p>
+            <h2>Small-batch botanicals, treated like <em>treasure.</em></h2>
+          </div>
+          <a href="/shop" className="botanicalTextLink">View all products <ArrowRight size={15} /></a>
+        </div>
+
+        <div className="botanicalProducts">
+          {products.map((product, index) => (
+            <article className="botanicalProductCard" key={product.slug}>
+              <a href={`/products/${product.slug}`} className={`botanicalProductImage productTone${index + 1}`}>
+                <span className="productIndex">0{index + 1}</span>
+                <img src={product.image} alt={product.name} onError={(e) => { e.currentTarget.style.display = "none"; }} />
+                <div className="productFallback"><span>VERDIXA</span><b>{product.fallback}</b><small>{product.unit}</small></div>
+                <div className="productPill">{product.category}</div>
+              </a>
+              <div className="botanicalProductInfo">
+                <div>
+                  <h3>{product.name}</h3>
+                  <p>{product.unit}</p>
+                </div>
+                <div className="botanicalPrice">
+                  {product.compare && <del>{product.compare}</del>}
+                  <strong>{product.price}</strong>
+                </div>
               </div>
-              <div className="productCardInfo">
-                <div><h3>{p.name}</h3><p>{p.meta}</p><div className="stars">★★★★★ <small>{p.reviews}</small></div><strong>{p.price} <del>{p.compare}</del></strong></div>
-                <button className="addCart"><ShoppingBag size={16}/> Add to Cart</button>
-              </div>
+              <a href={`/products/${product.slug}`} className="botanicalAddLink">
+                Discover product <ArrowRight size={14} />
+              </a>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="ingredients" className="verdixaIngredients">
-        <div className="ingredientPanel">
-          <p className="verdixaEyebrow">PURE BOTANICALS</p>
-          <h2>What nature grows,<br/><em>we refine.</em></h2>
-          <p>Carefully selected botanicals, thoughtfully formulated for everyday skincare rituals.</p>
-          <a href="#philosophy" className="textLink">Explore our ingredients <ArrowRight size={16}/></a>
+      <section id="ingredients" className="botanicalIngredientStory">
+        <div className="ingredientArt">
+          <div className="ingredientGlow" />
+          <div className="ingredientLeaf">VERDIXA</div>
+          <span>01 — 03</span>
         </div>
-        <div className="ingredientTiles"><div><span>01</span><b>Neem</b><small>Purifying botanical</small></div><div><span>02</span><b>Tulsi</b><small>Calming plant extract</small></div><div><span>03</span><b>Green Tea</b><small>Antioxidant rich</small></div></div>
+        <div className="ingredientCopy">
+          <p className="botanicalEyebrow">THE BOTANICAL STORY</p>
+          <h2>What nature grows,<br /><em>we thoughtfully refine.</em></h2>
+          <p>From vibrant hibiscus to butterfly pea and nutrient-rich moringa, our collection celebrates distinctive botanicals and the rituals built around them.</p>
+          <div className="ingredientList">
+            <div><span>01</span><b>Moringa</b><small>Wholefood botanical</small></div>
+            <div><span>02</span><b>Hibiscus</b><small>Floral herbal infusion</small></div>
+            <div><span>03</span><b>Butterfly Pea</b><small>Natural blue botanical tea</small></div>
+          </div>
+        </div>
       </section>
 
-      <section id="philosophy" className="verdixaPhilosophy">
-        <p className="verdixaEyebrow">OUR PHILOSOPHY</p>
-        <h2>Less noise.<br/><em>More nature.</em></h2>
-        <p>We believe effective skincare can feel calm, honest and uncomplicated. Every Verdixa ritual is designed around purposeful ingredients, considered formulas and everyday consistency.</p>
+      <section id="ritual" className="botanicalRitual">
+        <div>
+          <p className="botanicalEyebrow">YOUR DAILY RITUAL</p>
+          <h2>Pour.<br />Pause.<br /><em>Reconnect.</em></h2>
+        </div>
+        <div className="ritualSteps">
+          <div><span>01</span><div><b>Choose</b><p>Pick the botanical that suits the moment.</p></div></div>
+          <div><span>02</span><div><b>Prepare</b><p>Slow down and make space for the ritual.</p></div></div>
+          <div><span>03</span><div><b>Enjoy</b><p>Let a simple daily ritual become something to look forward to.</p></div></div>
+        </div>
       </section>
 
-      <section className="verdixaRitual">
-        <div><p className="verdixaEyebrow">YOUR DAILY RITUAL</p><h2>Cleanse.<br/>Nourish.<br/><em>Glow.</em></h2></div>
-        <div className="ritualSteps"><div><span>01</span><b>Cleanse</b><p>Start fresh with a gentle botanical cleanse.</p></div><div><span>02</span><b>Nourish</b><p>Layer simple formulas that respect your skin.</p></div><div><span>03</span><b>Glow</b><p>Make consistency your most beautiful habit.</p></div></div>
+      <section className="botanicalEthos">
+        <p>Less noise.<br /><em>More nature.</em></p>
+        <small>VERDIXA — BOTANICAL WELLNESS, SIMPLY CONSIDERED</small>
       </section>
 
-      <footer id="contact" className="verdixaFooter">
-        <div><a href="/" className="verdixaLogo">VERDIXA</a><p>Nature meets modern skincare.</p></div>
-        <div><p className="footerLabel">CONTACT</p><a href="tel:+919999999999">+91 99999 99999</a><a href="mailto:hello@verdixaa.com">hello@verdixaa.com</a></div>
-        <div><p className="footerLabel">QUICK LINKS</p><a href="#collection">Shop</a><a href="#ingredients">Ingredients</a><a href="#philosophy">Our Philosophy</a></div>
+      <footer className="botanicalFooter">
+        <div>
+          <a href="/" className="botanicalLogo">VERDIXA</a>
+          <p>Botanical teas and wholefood wellness essentials for everyday rituals.</p>
+        </div>
+        <div>
+          <span>EXPLORE</span>
+          <a href="/shop">Shop</a>
+          <a href="#philosophy">Philosophy</a>
+          <a href="#ingredients">Ingredients</a>
+        </div>
+        <div>
+          <span>CONTACT</span>
+          <a href="mailto:hello@verdixaa.com">hello@verdixaa.com</a>
+          <a href="/shop">Start your ritual →</a>
+        </div>
       </footer>
     </main>
   );
