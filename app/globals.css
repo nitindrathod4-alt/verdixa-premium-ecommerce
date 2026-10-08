@@ -2234,3 +2234,40 @@ footer a:hover{opacity:.55}
   .hero:hover .hero-bg img{transform:none}
   .prod-card:hover{transform:none}
 }
+
+
+/* ================= VERDIXA PRODUCT GRID FIX ================= */
+.prod-grid{
+  width:100%;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:56px;
+  row-gap:72px;
+  align-items:start;
+}
+.prod-card .frame{
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  min-height:0;
+}
+.prod-card .frame img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.prod-card{
+  min-width:0;
+}
+.prod-card h3{
+  line-height:1.05;
+}
+@media(max-width:900px){
+  .prod-grid{
+    grid-template-columns:1fr;
+    gap:52px;
+  }
+  .prod-card .frame{
+    aspect-ratio:4/5;
+  }
+}
