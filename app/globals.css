@@ -2872,3 +2872,20 @@ body:has(.hero) footer .foot-bottom{border-top:1px solid #ffffff20;color:#aebda7
 .verdixaShopPage .vxShopPromise{background:#e9eddf;padding:65px 8%;display:grid;grid-template-columns:.6fr 1fr 1.2fr;gap:30px;align-items:center}
 .verdixaShopPage .vxShopPromise>span{font-size:8px;letter-spacing:.18em;color:#506747}.verdixaShopPage .vxShopPromise>p{font:500 clamp(38px,4.5vw,58px)/.95 "Playfair Display",Georgia,serif;margin:0;color:#14283f}.verdixaShopPage .vxShopPromise>p em{color:#4c8737}.verdixaShopPage .vxShopPromise>div{font-size:11px;line-height:1.8;color:#667261}.verdixaShopPage .vxShopPromise>div span{display:flex;align-items:center;gap:8px;margin-top:9px;color:#335b34;font-size:10px}
 @media(max-width:800px){.verdixaShopPage .vxShopIntro{grid-template-columns:1fr}.verdixaShopPage .vxShopIntroCopy{padding:52px 22px 25px;min-height:410px}.verdixaShopPage .vxShopIntro h1{font-size:58px}.verdixaShopPage .vxShopIntroVisual{min-height:420px}.verdixaShopPage .vxShopBar{padding:20px;align-items:flex-start;flex-direction:column}.verdixaShopPage .vxShopBar>div{align-items:flex-start;flex-direction:column;gap:8px}.verdixaShopPage .vxShopGrid{grid-template-columns:1fr;padding:35px 18px 65px;gap:38px}.verdixaShopPage .vxShopImageStage{height:105vw;max-height:470px}.verdixaShopPage .vxShopProductName h2{font-size:22px}.verdixaShopPage .vxShopPromise{grid-template-columns:1fr;gap:15px;padding:48px 22px}.verdixaShopPage .vxShopPromise>p{font-size:47px}}
+
+
+/* Shop product-card visual correction: remove legacy decorative overlays */
+.verdixaShopPage .vxShopImageStage::before,
+.verdixaShopPage .vxShopImageStage::after,
+.verdixaShopPage .vxShopImageLink::before,
+.verdixaShopPage .vxShopImageLink::after{content:none!important;display:none!important}
+.verdixaShopPage .vxShopImageStage{border-radius:70px 70px 2px 2px!important;overflow:hidden!important;position:relative!important}
+.verdixaShopPage .vxShopImageLink{inset:12px 10px 8px!important;padding:0!important;z-index:1!important}
+.verdixaShopPage .vxShopImageLink img{width:100%!important;height:100%!important;object-fit:contain!important;padding:0!important;mix-blend-mode:normal!important;filter:drop-shadow(0 12px 12px #28301a18);transform:scale(1.12);transition:transform .35s ease!important}
+.verdixaShopPage .vxShopCard:hover .vxShopImageLink img{transform:scale(1.16)!important}
+.verdixaShopPage .vxShopIndex{z-index:5!important;left:14px!important;top:14px!important}
+.verdixaShopPage .vxSaleTag{z-index:5!important;top:14px!important;right:14px!important;bottom:auto!important;left:auto!important;width:auto!important;height:auto!important;min-width:0!important;max-width:calc(100% - 100px)!important;border-radius:30px!important;background:#d9edaa!important;color:#203b2a!important;white-space:nowrap!important;display:inline-flex!important;align-items:center!important;padding:8px 10px!important;font-size:8px!important;line-height:1.2!important}
+.verdixaShopPage .vxQuickAdd{z-index:6!important;right:13px!important;bottom:13px!important;width:42px!important;height:42px!important;border-radius:50%!important;background:#14283f!important;color:white!important}
+.verdixaShopPage .vxShopImageTag{z-index:4!important;left:14px!important;bottom:15px!important}
+.verdixaShopPage .vxShopCard{overflow:visible!important}
+@media(max-width:800px){.verdixaShopPage .vxShopImageStage{height:clamp(340px,105vw,470px)!important}.verdixaShopPage .vxShopImageLink{inset:12px!important}.verdixaShopPage .vxShopImageLink img{transform:scale(1.08)}}
