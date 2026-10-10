@@ -1,0 +1,134 @@
+/* HOMEPAGE ONLY — isolated stylesheet, loaded after shared styles */
+.verdixaHome{--vh-ink:#1c3928;--vh-green:#244b34;--vh-paper:#fbfaf5;--vh-muted:#737e70;background:var(--vh-paper);color:var(--vh-ink);font-family:"Manrope",Arial,sans-serif;overflow:hidden}
+.verdixaHome *{box-sizing:border-box}
+.verdixaHome .nav{height:78px;padding:0 clamp(18px,5vw,76px);background:#fbfaf5;border-bottom:1px solid #e3e4d9;z-index:30}
+.verdixaHome .brand,.verdixaHome .foot-brand{font:italic 38px/.9 "Cormorant Garamond",Georgia,serif;letter-spacing:-.06em;color:#1b422d}
+.verdixaHome .nav-links{gap:clamp(14px,2.4vw,34px)}
+.verdixaHome .nav-links a{font-size:10px;letter-spacing:.04em;color:#526650}
+.verdixaHome .nav-links .nav-cta{background:#244b34;color:#fffaf0;border:1px solid #244b34;padding:13px 18px}
+.verdixaHome .cart-btn{width:42px;height:42px;border-radius:50%;border:1px solid #dce2d6;background:#fffefa;color:#244b34}
+.verdixaHome .hero{height:auto;min-height:min(790px,calc(100svh - 78px));display:flex;align-items:center;position:relative;isolation:isolate;background:#173b29}
+.verdixaHome .hero-bg,.verdixaHome .hero-overlay{position:absolute;inset:0}
+.verdixaHome .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:saturate(.7);transform:scale(1.02)}
+.verdixaHome .hero-overlay{background:linear-gradient(90deg,#10291fee 0%,#173b2bd9 40%,#173b2b78 72%,#142d1e45 100%)}
+.verdixaHome .hero-content{position:relative;width:min(1320px,100%);margin:auto;padding:clamp(82px,10vw,145px) clamp(22px,8vw,112px);color:#fffaf0}
+.verdixaHome .hero-overline{color:#d1dfc4;font-size:9px;letter-spacing:.22em;margin-bottom:30px}
+.verdixaHome .hero h1{font:400 clamp(70px,10.5vw,145px)/.78 "Cormorant Garamond",Georgia,serif;letter-spacing:-.065em;color:#fffaf0;max-width:1100px}
+.verdixaHome .hero h1 .italic{color:#c1d2b1}
+.verdixaHome .hero-sub{display:flex;align-items:flex-end;gap:34px;max-width:760px;margin-top:42px}
+.verdixaHome .hero-sub p{max-width:390px;color:#e0e6d9;font-size:12px;line-height:1.95}
+.verdixaHome .hero .ghost-btn{display:inline-flex;padding:15px 20px;border:1px solid #e3eadc;color:#fffaf0;font-size:10px;white-space:nowrap}
+.verdixaHome .hero .ghost-btn:hover{background:#fffaf0;color:#244b34}
+.verdixaHome .block{padding:clamp(75px,9vw,125px) 0}
+.verdixaHome .block .wrap{width:min(1320px,100%);padding-left:clamp(20px,5.5vw,78px);padding-right:clamp(20px,5.5vw,78px)}
+.verdixaHome .overline{font-size:8px;letter-spacing:.2em;color:#74836e}
+.verdixaHome .sec-title{font:400 clamp(40px,5.3vw,70px)/.96 "Cormorant Garamond",Georgia,serif;letter-spacing:-.045em;color:#1b402b;max-width:820px}
+.verdixaHome .manifesto{background:#f2f1e7}
+.verdixaHome .manifesto .sec-head{max-width:780px;margin-bottom:50px}
+.verdixaHome .man-list{border-top:1px solid #d9dfd1}
+.verdixaHome .man-row{display:grid;grid-template-columns:60px minmax(180px,.8fr) 1.1fr;align-items:center;gap:24px;padding:27px 0;border-bottom:1px solid #d9dfd1}
+.verdixaHome .man-num{font-size:10px;color:#8c9a82;letter-spacing:.1em}
+.verdixaHome .man-row h3{font:400 clamp(24px,3vw,35px)/1 "Cormorant Garamond",Georgia,serif;color:#244b34}
+.verdixaHome .man-row p{max-width:430px;color:#737e70;font-size:11px;line-height:1.9}
+.verdixaHome .marquee{background:#244b34;color:#f8f4e8;padding:18px 0}
+.verdixaHome .marquee .item{gap:28px;font-size:9px;letter-spacing:.16em}
+.verdixaHome .marquee .dot{color:#c5d3b4}
+.verdixaHome .block.products{background:#fbfaf5}
+.verdixaHome .block.products>.wrap{max-width:1500px;padding-left:clamp(18px,5vw,72px);padding-right:clamp(18px,5vw,72px)}
+.verdixaHome .prod-head{display:grid;grid-template-columns:1.2fr .7fr;align-items:end;gap:40px;margin-bottom:48px}
+.verdixaHome .prod-head .note{max-width:350px;color:#778174;font-size:11px;line-height:1.9;margin:0 0 7px}
+.verdixaHome .block.products .prod-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(18px,2.6vw,38px)!important;max-width:none;margin:0}
+.verdixaHome .block.products .prod-card{background:transparent;border:0;padding:0 0 8px;overflow:visible;box-shadow:none}
+.verdixaHome .block.products .prod-card:hover{transform:translateY(-4px);box-shadow:none}
+.verdixaHome .block.products .prod-card .frame{height:clamp(310px,34vw,460px);border-radius:150px 150px 2px 2px;border:0;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.verdixaHome .block.products .prod-card:nth-child(1) .frame{background:radial-gradient(ellipse at 50% 38%,#e8ecdd 0,#cdd9bf 50%,#9fb493 100%)}
+.verdixaHome .block.products .prod-card:nth-child(2) .frame{background:radial-gradient(ellipse at 50% 38%,#f8e8e0 0,#e9c9c0 50%,#c99489 100%)}
+.verdixaHome .block.products .prod-card:nth-child(3) .frame{background:radial-gradient(ellipse at 50% 38%,#e8f0f0 0,#c5d9de 50%,#8eafb9 100%)}
+.verdixaHome .block.products .prod-card .frame img{width:100%;height:100%;padding:clamp(18px,3vw,40px);object-fit:contain!important;mix-blend-mode:multiply;transition:transform .6s}
+.verdixaHome .block.products .prod-card:hover .frame img{transform:scale(1.045)}
+.verdixaHome .block.products .prod-card .prod-idx{position:absolute;top:20px;left:20px;z-index:2;color:#34543a;font-size:9px;letter-spacing:.12em}
+.verdixaHome .block.products .prod-card .prod-tags{left:14px;right:14px;bottom:14px;display:flex;flex-wrap:wrap;gap:5px}
+.verdixaHome .block.products .prod-card .prod-tags span{background:#fbfaf5dd;color:#40583f;border:1px solid #ffffff8c;padding:7px 9px;font-size:7px;letter-spacing:.04em}
+.verdixaHome .block.products .prod-card .prod-title-row,.verdixaHome .block.products .prod-card .prod-meta,.verdixaHome .block.products .prod-card>.desc,.verdixaHome .block.products .prod-card .home-product-actions{margin-left:2px;margin-right:2px}
+.verdixaHome .block.products .prod-card .prod-title-row{margin-top:23px;min-height:54px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.verdixaHome .block.products .prod-card .prod-title-row h3{font:400 clamp(25px,2.5vw,34px)/.96 "Cormorant Garamond",Georgia,serif;color:#1b402b;max-width:78%}
+.verdixaHome .block.products .prod-card .price{font-size:15px;font-weight:600;color:#244b34}
+.verdixaHome .block.products .prod-card .prod-meta{display:flex;justify-content:space-between;gap:8px;padding:12px 0;border-top:1px solid #e3e5d9;border-bottom:1px solid #e3e5d9;font-size:8px;letter-spacing:.07em;color:#778274}
+.verdixaHome .block.products .prod-card>.desc{min-height:57px;font-size:11px;line-height:1.85;color:#778174;margin-top:14px}
+.verdixaHome .block.products .prod-card .home-product-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+.verdixaHome .block.products .prod-card .home-product-actions .btn-primary,.verdixaHome .block.products .prod-card .home-product-actions .btn-secondary{display:flex;align-items:center;justify-content:center;min-height:46px;width:100%;padding:12px 8px;font-size:9px;border:1px solid #244b34}
+.verdixaHome .block.products .prod-card .home-product-actions .btn-primary{background:#244b34;color:#fffdf5}
+.verdixaHome .block.products .prod-card .home-product-actions .btn-secondary{background:transparent;color:#244b34}
+.verdixaHome .ritual{min-height:650px;display:flex;align-items:center;isolation:isolate;position:relative;background:#1b402b}
+.verdixaHome .ritual video{filter:saturate(.72)}
+.verdixaHome .ritual .veil{background:linear-gradient(90deg,#102b20df 0%,#153526b8 50%,#17372750 100%)}
+.verdixaHome .ritual-content{width:min(1320px,100%);margin:0 auto;padding:100px clamp(22px,8vw,110px);color:#fbf7ec}
+.verdixaHome .ritual-content h2{font:400 clamp(54px,7vw,92px)/.88 "Cormorant Garamond",Georgia,serif;letter-spacing:-.05em;color:#fffaf0}
+.verdixaHome .ritual-content h2 .italic{color:#c5d3b8}
+.verdixaHome .ritual-content>p:not(.overline){max-width:440px;color:#dce4d7;font-size:12px;line-height:1.9}
+.verdixaHome .ritual-content .ghost-btn{display:inline-flex;margin-top:17px;padding:14px 20px;border:1px solid #dce5d5;color:#fffaf0;font-size:10px}
+.verdixaHome .gallery{background:#f2f1e7}
+.verdixaHome .gallery .sec-head{max-width:780px;margin-bottom:40px}
+.verdixaHome .gal-grid{gap:14px;grid-auto-rows:clamp(170px,20vw,280px)}
+.verdixaHome .gal-item{overflow:hidden;background:#dfe5d7}
+.verdixaHome .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s,filter .4s;filter:saturate(.8)}
+.verdixaHome .gal-item:hover img{transform:scale(1.04);filter:saturate(1)}
+.verdixaHome .contact{background:#fbfaf5}
+.verdixaHome .contact-grid{gap:clamp(30px,7vw,100px);align-items:start}
+.verdixaHome .contact-grid h2{font:400 clamp(44px,5.4vw,72px)/.92 "Cormorant Garamond",Georgia,serif;letter-spacing:-.04em;color:#1b402b}
+.verdixaHome .contact-grid .lead{max-width:430px;color:#788174;font-size:12px;line-height:1.9}
+.verdixaHome .contact .card{background:#f2f1e7;border:1px solid #e0e3d6;padding:clamp(22px,3vw,38px);box-shadow:none}
+.verdixaHome .contact .field input,.verdixaHome .contact .field textarea{background:#fbfaf5;border:1px solid #dfe2d7;color:#24432d;padding:13px;font-size:11px}
+.verdixaHome .contact .submit-btn{background:#244b34;color:#fffdf5;min-height:47px;padding:12px 18px}
+.verdixaHome footer{background:#173b29;color:#e9eee2;padding:65px 0 24px}
+.verdixaHome footer .foot-brand{color:#fbf7ec}
+.verdixaHome footer p,.verdixaHome footer a{color:#c4d0c0}
+.verdixaHome footer .foot-bottom{border-top:1px solid #ffffff20;color:#aebda7}
+@media(max-width:900px){
+ .verdixaHome .hero{min-height:640px}
+ .verdixaHome .hero-content{padding:90px 28px}
+ .verdixaHome .hero h1{font-size:clamp(65px,11vw,95px)}
+ .verdixaHome .man-row{grid-template-columns:35px 1fr;gap:12px 18px}
+ .verdixaHome .man-row p{grid-column:2}
+ .verdixaHome .prod-head{grid-template-columns:1fr;gap:18px}
+ .verdixaHome .block.products .prod-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:30px!important}
+ .verdixaHome .block.products .prod-card .frame{height:clamp(300px,43vw,410px)}
+ .verdixaHome .ritual{min-height:560px}
+ .verdixaHome .gal-grid{grid-auto-rows:220px}
+}
+@media(max-width:620px){
+ .verdixaHome .nav{height:66px;padding:0 15px}
+ .verdixaHome .brand{font-size:31px}
+ .verdixaHome .nav-links{gap:12px}
+ .verdixaHome .nav-links a{font-size:9px}
+ .verdixaHome .nav-links a:not(.nav-cta){display:none}
+ .verdixaHome .nav-links .nav-cta{padding:10px 11px}
+ .verdixaHome .cart-btn{width:37px;height:37px;flex-shrink:0}
+ .verdixaHome .hero{min-height:calc(100svh - 66px)}
+ .verdixaHome .hero-overlay{background:linear-gradient(90deg,#102c20ee,#183a2bbf 72%,#142d1e66)}
+ .verdixaHome .hero-content{padding:75px 22px 65px}
+ .verdixaHome .hero h1{font-size:clamp(59px,15vw,84px);line-height:.82}
+ .verdixaHome .hero-sub{align-items:flex-start;flex-direction:column;gap:14px;margin-top:30px}
+ .verdixaHome .hero-sub p{font-size:11px;max-width:320px}
+ .verdixaHome .block{padding:68px 0}
+ .verdixaHome .block .wrap{padding-left:20px;padding-right:20px}
+ .verdixaHome .sec-title{font-size:clamp(39px,10vw,52px)}
+ .verdixaHome .man-row{padding:22px 0}
+ .verdixaHome .man-row h3{font-size:27px}
+ .verdixaHome .man-row p{font-size:10px}
+ .verdixaHome .block.products .prod-grid{grid-template-columns:1fr!important;gap:42px!important}
+ .verdixaHome .block.products .prod-card .frame{height:min(110vw,430px);border-radius:150px 150px 2px 2px}
+ .verdixaHome .block.products .prod-card .prod-title-row h3{font-size:30px}
+ .verdixaHome .block.products .prod-card>.desc{min-height:0}
+ .verdixaHome .ritual{min-height:580px}
+ .verdixaHome .ritual-content{padding:75px 22px}
+ .verdixaHome .ritual-content h2{font-size:clamp(49px,12vw,68px)}
+ .verdixaHome .gal-grid{grid-template-columns:1fr 1fr;gap:8px;grid-auto-rows:155px}
+ .verdixaHome .gal-item.big{grid-row:span 2}
+ .verdixaHome .gal-item.wide{grid-column:auto}
+ .verdixaHome .contact-grid{grid-template-columns:1fr;gap:32px}
+ .verdixaHome .contact-grid h2{font-size:47px}
+ .verdixaHome footer .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
+ .verdixaHome footer .foot-grid>div:first-child{grid-column:1/-1}
+ .verdixaHome footer .foot-bottom{gap:12px;flex-direction:column;align-items:flex-start}
+}
