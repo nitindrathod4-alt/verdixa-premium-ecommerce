@@ -2814,3 +2814,61 @@ body:has(.hero) footer .foot-bottom{border-top:1px solid #ffffff20;color:#aebda7
  body:has(.hero) footer .foot-grid>div:first-child{grid-column:1/-1}
  body:has(.hero) footer .foot-bottom{gap:12px;flex-direction:column;align-items:flex-start}
 }
+
+
+/* Original Verdixa shop redesign — warm botanical editorial + real product packaging */
+.verdixaShopPage{background:#faf8f1;color:#142238;min-height:100vh;font-family:"DM Sans",Arial,sans-serif}
+.verdixaShopPage .vxShopIntro{display:grid;grid-template-columns:42% 58%;min-height:590px;background:#f4efe3;overflow:hidden;position:relative}
+.verdixaShopPage .vxShopIntroCopy{padding:70px 4vw 28px 7vw;display:flex;flex-direction:column;align-items:flex-start;position:relative;z-index:3}
+.verdixaShopPage .vxShopKicker{font-size:9px;letter-spacing:.22em;color:#2c4a31;display:flex;align-items:center;gap:9px}
+.verdixaShopPage .vxShopIntro h1{font:500 clamp(55px,6vw,83px)/.95 "Playfair Display",Georgia,serif;letter-spacing:-.06em;color:#142238;margin:35px 0 23px}
+.verdixaShopPage .vxShopIntro h1 em{font-weight:500;color:#4c8737}
+.verdixaShopPage .vxShopIntroCopy>p{max-width:380px;color:#60695d;font-size:12px;line-height:1.9;margin:0}
+.verdixaShopPage .vxShopExplore{display:inline-flex;align-items:center;gap:18px;margin-top:27px;background:#4c8737;color:white;padding:15px 20px;border-radius:30px;font-size:10px;font-weight:700}
+.verdixaShopPage .vxShopIntroFoot{margin-top:auto;padding-top:35px;width:100%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:7px;letter-spacing:.13em;color:#71796d}
+.verdixaShopPage .vxShopIntroVisual{position:relative;min-height:590px;background:linear-gradient(125deg,#eee1c9,#bca17a 55%,#e8d5b5);overflow:hidden}
+.verdixaShopPage .vxShopIntroVisual:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 55% 45%,#fff8df 0%,#fff1d355 44%,transparent 70%),url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1300&q=80') center/cover;opacity:.35;mix-blend-mode:multiply}
+.verdixaShopPage .vxShopSun{position:absolute;right:14%;top:10%;width:180px;height:180px;border-radius:50%;background:#e0eab6a8}
+.verdixaShopPage .vxShopOrbit{display:none}
+.verdixaShopPage .vxShopLeaf{display:none}
+.verdixaShopPage .vxShopIntroVisual:after{content:"";position:absolute;left:0;right:0;bottom:0;height:20%;background:linear-gradient(0deg,#7b65453d,transparent)}
+.verdixaShopPage .vxShopIntroVisual>span{position:absolute;left:6%;bottom:5%;font-size:8px;letter-spacing:.17em;color:#534a36;z-index:5}
+.verdixaShopPage .vxShopVisualStamp{position:absolute;right:5%;bottom:7%;width:65px;height:65px;border:1px solid #45643b;border-radius:50%;display:grid;place-items:center;color:#45643b;font:14px "Playfair Display",Georgia,serif;z-index:5}
+.verdixaShopPage .vxShopIntroVisual:has(.vxShopLeaf):after{pointer-events:none}
+.verdixaShopPage .vxShopIntroVisual .vxShopLeaf{display:block;position:absolute;z-index:1;width:220px;height:330px;background:linear-gradient(130deg,#6e8d4e,#2c5835);border-radius:100% 0 100% 0;filter:drop-shadow(0 18px 18px #26351d30);opacity:.55;transform:rotate(35deg);right:0;bottom:-120px}
+.verdixaShopPage .vxShopIntroVisual .leafB{right:12%;top:-90px;bottom:auto;transform:rotate(70deg) scale(.7);opacity:.3}
+.verdixaShopPage .vxShopIntroVisual .leafC{left:3%;bottom:-180px;transform:rotate(-25deg) scale(.65)}
+.verdixaShopPage .vxShopBar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 7%;background:#14283f;color:#fff}
+.verdixaShopPage .vxShopBar>div{display:flex;align-items:center;gap:22px}.verdixaShopPage .vxShopBar>div>span{font-size:8px;letter-spacing:.18em;color:#d7e9a6}.verdixaShopPage .vxShopBar>div>b{font:500 20px "Playfair Display",Georgia,serif}.verdixaShopPage .vxShopBar>span{font-size:8px;letter-spacing:.12em;color:#c8d0cf}
+.verdixaShopPage .vxShopGrid{padding:60px 6% 95px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;background:#faf8f1}
+.verdixaShopPage .vxShopCard{min-width:0;background:transparent}
+.verdixaShopPage .vxShopImageStage{position:relative;height:clamp(310px,34vw,460px);overflow:hidden;isolation:isolate;background:#e6eadf}
+.verdixaShopPage .product-hibiscus-herbal-infusion .vxShopImageStage{background:#f1dfd9}
+.verdixaShopPage .product-butterfly-pea-blue-tea .vxShopImageStage{background:#e0e9f0}
+.verdixaShopPage .vxShopImageLink{position:absolute;inset:0;display:grid;place-items:center;padding:20px}
+.verdixaShopPage .vxShopImageLink img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .5s}
+.verdixaShopPage .vxShopCard:hover .vxShopImageLink img{transform:scale(1.04)}
+.verdixaShopPage .vxShopIndex{position:absolute;top:15px;left:15px;z-index:3;background:#fffdf0d9;padding:9px 10px;font-size:8px;letter-spacing:.1em;color:#24364a}
+.verdixaShopPage .vxShopIndex i{font-style:normal;color:#899080}
+.verdixaShopPage .vxShopImageTag{position:absolute;left:15px;bottom:15px;z-index:3;font-size:7px;letter-spacing:.13em;color:#475548}
+.verdixaShopPage .vxSaleTag{position:absolute;top:15px;right:15px;z-index:4;background:#d9edaa;color:#203b2a;padding:9px 10px;font-size:8px;font-weight:700}
+.verdixaShopPage .vxQuickAdd{position:absolute;z-index:4;right:15px;bottom:13px;width:42px;height:42px;border:0;border-radius:50%;background:#14283f;color:white;display:grid;place-items:center;transition:background .2s,transform .2s}
+.verdixaShopPage .vxQuickAdd:hover{background:#4c8737;transform:rotate(90deg)}
+.verdixaShopPage .vxImageCaption{display:none}
+.verdixaShopPage .vxShopCardInfo{padding:18px 2px 0}
+.verdixaShopPage .vxShopCardTop{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#777e70;font-size:8px;letter-spacing:.08em}
+.verdixaShopPage .vxShopCardTop i{font-style:normal;color:#4c8737}
+.verdixaShopPage .vxShopCardTop button{border:0;background:transparent;color:#4c7139;display:flex;align-items:center;gap:4px;font-size:8px}
+.verdixaShopPage .vxShopProductName{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-top:13px}
+.verdixaShopPage .vxShopProductName h2{font:500 21px/1.2 "Playfair Display",Georgia,serif;margin:0;color:#142238;letter-spacing:-.025em}
+.verdixaShopPage .vxShopProductName>span{color:#4c8737}
+.verdixaShopPage .vxShopDescription{color:#777e70;font-size:10px;line-height:1.7;margin:10px 0 13px;min-height:34px}
+.verdixaShopPage .vxShopPriceRow{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e1ded3;padding-top:13px}
+.verdixaShopPage .vxShopPriceRow>div{display:flex;align-items:center;gap:9px}.verdixaShopPage .vxShopPriceRow strong{font-size:15px}.verdixaShopPage .vxShopPriceRow del{font-size:10px;color:#969a8e}.verdixaShopPage .vxShopPriceRow>span{font-size:8px;color:#777e70}
+.verdixaShopPage .vxShopActions{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:14px}
+.verdixaShopPage .vxShopAddButton,.verdixaShopPage .vxShopBuyButton{height:44px;display:flex;align-items:center;justify-content:center;gap:9px;font-size:10px;font-weight:600}
+.verdixaShopPage .vxShopAddButton{background:#14283f;color:white;border:1px solid #14283f;padding:0 14px}.verdixaShopPage .vxShopAddButton:hover{background:#4c8737;border-color:#4c8737}
+.verdixaShopPage .vxShopBuyButton{background:transparent;color:#14283f;border:1px solid #c9cfc0;padding:0 14px}
+.verdixaShopPage .vxShopPromise{background:#e9eddf;padding:65px 8%;display:grid;grid-template-columns:.6fr 1fr 1.2fr;gap:30px;align-items:center}
+.verdixaShopPage .vxShopPromise>span{font-size:8px;letter-spacing:.18em;color:#506747}.verdixaShopPage .vxShopPromise>p{font:500 clamp(38px,4.5vw,58px)/.95 "Playfair Display",Georgia,serif;margin:0;color:#14283f}.verdixaShopPage .vxShopPromise>p em{color:#4c8737}.verdixaShopPage .vxShopPromise>div{font-size:11px;line-height:1.8;color:#667261}.verdixaShopPage .vxShopPromise>div span{display:flex;align-items:center;gap:8px;margin-top:9px;color:#335b34;font-size:10px}
+@media(max-width:800px){.verdixaShopPage .vxShopIntro{grid-template-columns:1fr}.verdixaShopPage .vxShopIntroCopy{padding:52px 22px 25px;min-height:410px}.verdixaShopPage .vxShopIntro h1{font-size:58px}.verdixaShopPage .vxShopIntroVisual{min-height:420px}.verdixaShopPage .vxShopBar{padding:20px;align-items:flex-start;flex-direction:column}.verdixaShopPage .vxShopBar>div{align-items:flex-start;flex-direction:column;gap:8px}.verdixaShopPage .vxShopGrid{grid-template-columns:1fr;padding:35px 18px 65px;gap:38px}.verdixaShopPage .vxShopImageStage{height:105vw;max-height:470px}.verdixaShopPage .vxShopProductName h2{font-size:22px}.verdixaShopPage .vxShopPromise{grid-template-columns:1fr;gap:15px;padding:48px 22px}.verdixaShopPage .vxShopPromise>p{font-size:47px}}
