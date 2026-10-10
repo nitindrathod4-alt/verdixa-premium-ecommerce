@@ -2665,3 +2665,152 @@ html,body{max-width:100%;overflow-x:hidden}
  .vxShopAddButton,.vxShopBuyButton{font-size:8px;padding:11px 5px;gap:5px}
  .vxShopImageTag{font-size:6px;letter-spacing:.08em}
 }
+
+
+/* VERDIXA HOMEPAGE — premium editorial refresh */
+body:has(.hero) {background:#fbfaf5;color:#203b29}
+body:has(.hero) .nav{padding:0 5.5%;height:82px;background:#fbfaf5;border-bottom:1px solid #e5e5d9;transition:background .25s,box-shadow .25s}
+body:has(.hero) .nav.scrolled{background:#fbfaf5f2;box-shadow:0 8px 30px #1d38200c;backdrop-filter:blur(12px)}
+body:has(.hero) .brand,body:has(.hero) .foot-brand{font:italic 36px/.9 "Cormorant Garamond",Georgia,serif;letter-spacing:-.055em;color:#1b422d}
+body:has(.hero) .nav-links{gap:clamp(16px,2.5vw,36px)}
+body:has(.hero) .nav-links a{font-size:10px;letter-spacing:.05em;color:#536652;transition:color .2s}
+body:has(.hero) .nav-links a:hover{color:#1b422d}
+body:has(.hero) .nav-links .nav-cta{padding:13px 19px;background:#244b34;color:#fffdf5;border:1px solid #244b34}
+body:has(.hero) .nav-links .nav-cta:hover{background:#173b29}
+body:has(.hero) .cart-btn{width:42px;height:42px;border:1px solid #dce1d5;border-radius:50%;background:#fffefa;color:#244b34}
+body:has(.hero) .hero{min-height:min(790px,calc(100svh - 82px));height:auto;display:flex;align-items:center;isolation:isolate;background:#173b29}
+body:has(.hero) .hero-bg{inset:0}
+body:has(.hero) .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:saturate(.78);transform:scale(1.015)}
+body:has(.hero) .hero-overlay{background:linear-gradient(90deg,#102c20e8 0%,#183a2bd9 38%,#183a2b70 68%,#142d1e42 100%)}
+body:has(.hero) .hero-content{width:min(1280px,100%);margin:0 auto;padding:clamp(85px,12vw,160px) clamp(24px,8vw,110px);color:#fbf7ec}
+body:has(.hero) .hero-overline{color:#d2dfc4;font-size:9px;letter-spacing:.22em;margin-bottom:30px}
+body:has(.hero) .hero h1{font:400 clamp(70px,10.2vw,142px)/.78 "Cormorant Garamond",Georgia,serif;letter-spacing:-.065em;max-width:1000px;margin:0;color:#fffaf0}
+body:has(.hero) .hero h1 .italic{color:#c2d2b4;font-weight:400}
+body:has(.hero) .hero-sub{display:flex;align-items:flex-end;gap:45px;max-width:730px;margin-top:42px}
+body:has(.hero) .hero-sub p{max-width:390px;color:#e0e5d9;font-size:12px;line-height:1.9}
+body:has(.hero) .hero .ghost-btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 20px;border:1px solid #d8e2d2;color:#fffaf0;font-size:10px;white-space:nowrap;transition:background .2s,color .2s}
+body:has(.hero) .hero .ghost-btn:hover{background:#f8f5e9;color:#23452f}
+body:has(.hero) .block{padding:clamp(75px,9vw,125px) 0}
+body:has(.hero) .block .wrap{width:min(1320px,100%);padding-left:clamp(20px,5.5vw,78px);padding-right:clamp(20px,5.5vw,78px)}
+body:has(.hero) .overline{font-size:8px;letter-spacing:.2em;color:#71816d}
+body:has(.hero) .sec-title{font:400 clamp(39px,5.4vw,70px)/.96 "Cormorant Garamond",Georgia,serif;letter-spacing:-.045em;color:#1b402b;max-width:820px}
+body:has(.hero) .manifesto{background:#f4f2e8}
+body:has(.hero) .manifesto .sec-head{max-width:780px;margin-bottom:52px}
+body:has(.hero) .man-list{border-top:1px solid #daddcf}
+body:has(.hero) .man-row{display:grid;grid-template-columns:65px minmax(180px,.8fr) 1.1fr;align-items:center;gap:25px;padding:28px 0;border-bottom:1px solid #daddcf}
+body:has(.hero) .man-num{font-size:10px;color:#8c9a82;letter-spacing:.1em}
+body:has(.hero) .man-row h3{font:400 clamp(24px,3vw,34px)/1 "Cormorant Garamond",Georgia,serif;color:#244b34}
+body:has(.hero) .man-row p{max-width:430px;color:#778174;font-size:11px;line-height:1.9}
+body:has(.hero) .marquee{background:#244b34;color:#f8f4e8;padding:18px 0;border:0;overflow:hidden}
+body:has(.hero) .marquee .item{gap:28px;font-size:9px;letter-spacing:.16em}
+body:has(.hero) .marquee .dot{color:#c2cda9}
+body:has(.hero) .block.products{background:#fbfaf5}
+body:has(.hero) .block.products>.wrap{max-width:1500px;padding-left:clamp(18px,5vw,72px);padding-right:clamp(18px,5vw,72px)}
+body:has(.hero) .prod-head{display:grid;grid-template-columns:1.2fr .7fr;align-items:end;gap:40px;margin-bottom:48px}
+body:has(.hero) .prod-head .sec-title{max-width:690px}
+body:has(.hero) .prod-head .note{max-width:350px;color:#788174;font-size:11px;line-height:1.9;margin:0 0 7px}
+body:has(.hero) .block.products .prod-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(18px,2.6vw,38px)!important;max-width:none}
+body:has(.hero) .block.products .prod-card{background:transparent;border:0;padding:0 0 8px;overflow:visible;box-shadow:none}
+body:has(.hero) .block.products .prod-card:hover{transform:translateY(-4px);box-shadow:none}
+body:has(.hero) .block.products .prod-card .frame{height:clamp(310px,34vw,460px);border-radius:145px 145px 2px 2px;border:0;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+body:has(.hero) .block.products .prod-card:nth-child(1) .frame{background:radial-gradient(ellipse at 50% 38%,#e8ecdd 0,#cdd9bf 50%,#9fb493 100%)}
+body:has(.hero) .block.products .prod-card:nth-child(2) .frame{background:radial-gradient(ellipse at 50% 38%,#f8e8e0 0,#e9c9c0 50%,#c99489 100%)}
+body:has(.hero) .block.products .prod-card:nth-child(3) .frame{background:radial-gradient(ellipse at 50% 38%,#e8f0f0 0,#c5d9de 50%,#8eafb9 100%)}
+body:has(.hero) .block.products .prod-card .frame img{padding:clamp(18px,3vw,40px);object-fit:contain!important;mix-blend-mode:multiply;transition:transform .6s}
+body:has(.hero) .block.products .prod-card:hover .frame img{transform:scale(1.045)}
+body:has(.hero) .block.products .prod-card .prod-idx{position:absolute;top:20px;left:20px;z-index:2;color:#34543a;font-size:9px;letter-spacing:.12em}
+body:has(.hero) .block.products .prod-card .prod-tags{left:14px;right:14px;bottom:14px;display:flex;flex-wrap:wrap;gap:5px}
+body:has(.hero) .block.products .prod-card .prod-tags span{background:#fbfaf5dd;color:#40583f;border:1px solid #ffffff8c;padding:7px 9px;font-size:7px;letter-spacing:.04em;backdrop-filter:blur(8px)}
+body:has(.hero) .block.products .prod-card .prod-title-row,body:has(.hero) .block.products .prod-card .prod-meta,body:has(.hero) .block.products .prod-card>.desc,body:has(.hero) .block.products .prod-card .home-product-actions{margin-left:2px;margin-right:2px}
+body:has(.hero) .block.products .prod-card .prod-title-row{margin-top:23px;min-height:54px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+body:has(.hero) .block.products .prod-card .prod-title-row h3{font:400 clamp(25px,2.5vw,34px)/.96 "Cormorant Garamond",Georgia,serif;color:#1b402b;max-width:78%}
+body:has(.hero) .block.products .prod-card .price{font-size:15px;font-weight:600;color:#244b34}
+body:has(.hero) .block.products .prod-card .prod-meta{display:flex;justify-content:space-between;gap:8px;padding:12px 0;border-top:1px solid #e3e5d9;border-bottom:1px solid #e3e5d9;font-size:8px;letter-spacing:.07em;color:#778274}
+body:has(.hero) .block.products .prod-card>.desc{min-height:57px;font-size:11px;line-height:1.85;color:#778174;margin-top:14px}
+body:has(.hero) .block.products .prod-card .home-product-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+body:has(.hero) .block.products .prod-card .home-product-actions .btn-primary,body:has(.hero) .block.products .prod-card .home-product-actions .btn-secondary{display:flex;align-items:center;justify-content:center;min-height:46px;width:100%;padding:12px 8px;font-size:9px;letter-spacing:.04em;border:1px solid #244b34}
+body:has(.hero) .block.products .prod-card .home-product-actions .btn-primary{background:#244b34;color:#fffdf5}
+body:has(.hero) .block.products .prod-card .home-product-actions .btn-secondary{background:transparent;color:#244b34}
+body:has(.hero) .block.products .prod-card .home-product-actions .btn-primary:hover{background:#173b29}
+body:has(.hero) .block.products .prod-card .home-product-actions .btn-secondary:hover{background:#e9eee2}
+body:has(.hero) .ritual{min-height:660px;display:flex;align-items:center;isolation:isolate;position:relative;background:#1b402b}
+body:has(.hero) .ritual video{filter:saturate(.72)}
+body:has(.hero) .ritual .veil{background:linear-gradient(90deg,#102b20df 0%,#153526b8 50%,#17372750 100%)}
+body:has(.hero) .ritual-content{width:min(1320px,100%);margin:0 auto;padding:100px clamp(22px,8vw,110px);color:#fbf7ec}
+body:has(.hero) .ritual-content h2{font:400 clamp(54px,7vw,92px)/.88 "Cormorant Garamond",Georgia,serif;letter-spacing:-.05em;color:#fffaf0}
+body:has(.hero) .ritual-content h2 .italic{color:#c5d3b8}
+body:has(.hero) .ritual-content>p:not(.overline){max-width:440px;color:#dce4d7;font-size:12px;line-height:1.9}
+body:has(.hero) .ritual-content .ghost-btn{display:inline-flex;margin-top:17px;padding:14px 20px;border:1px solid #dce5d5;color:#fffaf0;font-size:10px}
+body:has(.hero) .gallery{background:#f4f2e8}
+body:has(.hero) .gallery .sec-head{max-width:780px;margin-bottom:40px}
+body:has(.hero) .gal-grid{gap:14px;grid-auto-rows:clamp(170px,20vw,280px)}
+body:has(.hero) .gal-item{overflow:hidden;background:#dfe5d7}
+body:has(.hero) .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s,filter .4s;filter:saturate(.8)}
+body:has(.hero) .gal-item:hover img{transform:scale(1.04);filter:saturate(1)}
+body:has(.hero) .contact{background:#fbfaf5}
+body:has(.hero) .contact-grid{gap:clamp(30px,7vw,100px);align-items:start}
+body:has(.hero) .contact-grid h2{font:400 clamp(44px,5.4vw,72px)/.92 "Cormorant Garamond",Georgia,serif;letter-spacing:-.04em;color:#1b402b}
+body:has(.hero) .contact-grid .lead{max-width:430px;color:#788174;font-size:12px;line-height:1.9}
+body:has(.hero) .contact-info a{color:#36583b;font-size:11px}
+body:has(.hero) .contact .card{background:#f4f2e8;border:1px solid #e0e3d6;padding:clamp(22px,3vw,38px);box-shadow:none}
+body:has(.hero) .contact .field label{font-size:8px;letter-spacing:.14em;color:#5e7059}
+body:has(.hero) .contact .field input,body:has(.hero) .contact .field textarea{background:#fbfaf5;border:1px solid #dfe2d7;color:#24432d;padding:13px;font-size:11px}
+body:has(.hero) .contact .submit-btn{background:#244b34;color:#fffdf5;min-height:47px;padding:12px 18px}
+body:has(.hero) footer{background:#173b29;color:#e9eee2;padding:65px 0 24px}
+body:has(.hero) footer .foot-brand{color:#fbf7ec}
+body:has(.hero) footer p,body:has(.hero) footer a{color:#c4d0c0}
+body:has(.hero) footer .foot-col .overline{color:#a9bca2}
+body:has(.hero) footer .foot-bottom{border-top:1px solid #ffffff20;color:#aebda7}
+@media(max-width:900px){
+ body:has(.hero) .nav{height:72px;padding:0 20px}
+ body:has(.hero) .hero{min-height:640px}
+ body:has(.hero) .hero-content{padding:95px 28px}
+ body:has(.hero) .hero h1{font-size:clamp(65px,11vw,95px)}
+ body:has(.hero) .man-row{grid-template-columns:35px 1fr;gap:12px 18px}
+ body:has(.hero) .man-row p{grid-column:2}
+ body:has(.hero) .prod-head{grid-template-columns:1fr;gap:18px}
+ body:has(.hero) .block.products .prod-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:30px!important}
+ body:has(.hero) .block.products .prod-card .frame{height:clamp(300px,43vw,410px)}
+ body:has(.hero) .ritual{min-height:560px}
+ body:has(.hero) .gal-grid{grid-auto-rows:220px}
+}
+@media(max-width:620px){
+ body:has(.hero) .nav{height:66px;padding:0 15px}
+ body:has(.hero) .brand{font-size:31px}
+ body:has(.hero) .nav-links{gap:12px}
+ body:has(.hero) .nav-links a{font-size:9px}
+ body:has(.hero) .nav-links a:not(.nav-cta){display:none}
+ body:has(.hero) .nav-links .nav-cta{padding:10px 11px}
+ body:has(.hero) .cart-btn{width:37px;height:37px;flex-shrink:0}
+ body:has(.hero) .hero{min-height:650px;min-height:calc(100svh - 66px)}
+ body:has(.hero) .hero-overlay{background:linear-gradient(90deg,#102c20e8,#183a2bbf 72%,#142d1e66)}
+ body:has(.hero) .hero-content{padding:75px 22px 65px}
+ body:has(.hero) .hero h1{font-size:clamp(59px,15vw,84px);line-height:.82}
+ body:has(.hero) .hero-overline{font-size:8px;letter-spacing:.15em}
+ body:has(.hero) .hero-sub{align-items:flex-start;flex-direction:column;gap:14px;margin-top:30px}
+ body:has(.hero) .hero-sub p{font-size:11px;max-width:320px}
+ body:has(.hero) .block{padding:68px 0}
+ body:has(.hero) .block .wrap{padding-left:20px;padding-right:20px}
+ body:has(.hero) .sec-title{font-size:clamp(39px,10vw,52px)}
+ body:has(.hero) .man-row{padding:22px 0}
+ body:has(.hero) .man-row h3{font-size:27px}
+ body:has(.hero) .man-row p{font-size:10px}
+ body:has(.hero) .marquee .item{gap:18px;font-size:8px}
+ body:has(.hero) .prod-head{margin-bottom:30px}
+ body:has(.hero) .block.products .prod-grid{grid-template-columns:1fr!important;gap:42px!important}
+ body:has(.hero) .block.products .prod-card .frame{height:min(110vw,430px);border-radius:150px 150px 2px 2px}
+ body:has(.hero) .block.products .prod-card .prod-title-row h3{font-size:30px}
+ body:has(.hero) .block.products .prod-card>.desc{min-height:0}
+ body:has(.hero) .ritual{min-height:580px}
+ body:has(.hero) .ritual-content{padding:75px 22px}
+ body:has(.hero) .ritual-content h2{font-size:clamp(49px,12vw,68px)}
+ body:has(.hero) .gallery .sec-head{margin-bottom:28px}
+ body:has(.hero) .gal-grid{grid-template-columns:1fr 1fr;gap:8px;grid-auto-rows:155px}
+ body:has(.hero) .gal-item.big{grid-row:span 2}
+ body:has(.hero) .gal-item.wide{grid-column:auto}
+ body:has(.hero) .contact-grid{grid-template-columns:1fr;gap:32px}
+ body:has(.hero) .contact-grid h2{font-size:47px}
+ body:has(.hero) footer .foot-grid{grid-template-columns:1fr 1fr;gap:28px}
+ body:has(.hero) footer .foot-grid>div:first-child{grid-column:1/-1}
+ body:has(.hero) footer .foot-bottom{gap:12px;flex-direction:column;align-items:flex-start}
+}
