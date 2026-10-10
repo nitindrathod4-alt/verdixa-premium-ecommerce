@@ -2409,3 +2409,90 @@ footer a:hover{opacity:.55}
 /* ================= VERDIXA HORIZONTAL OVERFLOW GUARD ================= */
 html,body{max-width:100%;overflow-x:hidden}
 .block.products .prod-grid{max-width:1200px;margin-left:auto;margin-right:auto}
+
+
+/* ================= VERDIXA ORIGINAL ADMIN DASHBOARD ================= */
+/* Admin-only styling: intentionally scoped so the storefront is unchanged. */
+.adminPage{
+  --admin-ink:#1b3023;--admin-muted:#758075;--admin-line:#e3e4d8;--admin-paper:#fffefa;--admin-green:#234a33;--admin-gold:#b99a60;
+  min-height:100vh;background:#f2f0e7;color:var(--admin-ink);padding:clamp(22px,4vw,58px) clamp(16px,5vw,72px) 90px;
+  font-family:"Manrope",Arial,sans-serif;max-width:100%;overflow:hidden
+}
+.adminPage *{box-sizing:border-box}
+.adminHeader{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;padding-bottom:34px;border-bottom:1px solid #d9dbcf}
+.adminHeader .eyebrow,.adminPanelHead .eyebrow{font-size:9px;letter-spacing:.2em;color:#7d8779;margin:0 0 12px}
+.adminHeader h1{font:400 clamp(42px,5.5vw,72px)/.92 "Cormorant Garamond",Georgia,serif;letter-spacing:-.045em;margin:0;color:#1d3525}
+.adminSub{font-size:12px;line-height:1.7;color:#7a8177;margin:16px 0 0}
+.adminHeaderRight{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.adminLive{display:inline-flex;align-items:center;gap:8px;border:1px solid #d7dfd2;border-radius:99px;padding:10px 13px;font-size:8px;letter-spacing:.14em;color:#35573d;background:#f8faf5}
+.adminLive i{width:6px;height:6px;background:#6b9a64;border-radius:50%;box-shadow:0 0 0 4px #6b9a641b}
+.adminBack{font-size:10px;letter-spacing:.08em;color:#284a34;border-bottom:1px solid #aeb9aa;padding:0 0 5px}
+.adminStats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 34px}
+.adminStats article{min-width:0;background:#fbfaf5;border:1px solid var(--admin-line);border-radius:5px;padding:24px 25px;display:flex;flex-direction:column;gap:10px;box-shadow:0 8px 25px #263c2610}
+.adminStats article.statPrimary{background:#234a33;color:#f6f2e8;border-color:#234a33}
+.adminStats article>span{font-size:8px;letter-spacing:.18em;color:#858b7e}
+.adminStats article.statPrimary>span{color:#c8d4c6}
+.adminStats article strong{font:400 clamp(30px,3.5vw,44px)/1 "Cormorant Garamond",Georgia,serif;letter-spacing:-.03em;overflow-wrap:anywhere}
+.adminStats article small{font-size:10px;color:#82877d}
+.adminStats article.statPrimary small{color:#c6d1c4}
+.adminPanel{background:var(--admin-paper);border:1px solid var(--admin-line);border-radius:5px;padding:clamp(18px,3vw,32px);margin:0 0 22px;box-shadow:0 12px 32px #243d2808;min-width:0}
+.adminPanelHead{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid #ecece3}
+.adminPanelHead h2{font:400 clamp(27px,3vw,38px)/1 "Cormorant Garamond",Georgia,serif;letter-spacing:-.025em;margin:0}
+.adminPanelHead>span{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#7b8377;background:#f1f2e9;border-radius:99px;padding:9px 12px;white-space:nowrap}
+.adminForm{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.adminForm input:not([type=checkbox]),.adminForm textarea,.adminRow select{font:11px "Manrope",Arial,sans-serif;color:#26382a;background:#fffefa;border:1px solid #dfe2d7;border-radius:3px;padding:13px 14px;min-width:0;width:100%;outline:none;transition:border-color .2s,box-shadow .2s}
+.adminForm input:focus,.adminForm textarea:focus,.adminRow select:focus{border-color:#718c70;box-shadow:0 0 0 3px #718c7018}
+.adminForm textarea{grid-column:1/-1;min-height:95px;resize:vertical}
+.adminForm .adminCheck{display:flex;align-items:center;gap:9px;font-size:10px;color:#526151}
+.adminForm .adminCheck input{accent-color:#234a33}
+.adminForm>div{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.adminForm .primary{border-radius:2px;padding:14px 20px;font-size:9px;letter-spacing:.12em;background:#234a33;transition:background .2s,transform .2s}
+.adminForm .primary:hover{background:#163722;transform:translateY(-1px)}
+.adminForm .primary:disabled{opacity:.6;cursor:wait}
+.adminCancel{border:1px solid #d8dbd0;padding:13px 16px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#596456}
+.adminNotice{font-size:11px;color:#3d7548;align-self:center;margin:0}
+.adminError{padding:14px 16px;background:#fff1e9;border:1px solid #efd2c2;color:#8c3c24;font-size:11px;border-radius:3px;overflow-wrap:anywhere}
+.adminTable{width:100%;min-width:0}
+.adminRow{display:grid;grid-template-columns:minmax(180px,2fr) minmax(70px,.55fr) minmax(90px,.7fr) minmax(90px,.7fr) minmax(110px,.9fr);align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid #ecece4;font-size:11px;min-width:0}
+.adminRow:last-child{border-bottom:0}
+.adminRow>div:first-child{min-width:0}
+.adminRow b{font-size:11px;font-weight:600;display:block;overflow-wrap:anywhere}
+.adminRow small{display:block;font-size:9px;line-height:1.65;color:#858a80;margin-top:6px;overflow-wrap:anywhere}
+.adminRow>strong{font:500 17px "Cormorant Garamond",Georgia,serif;white-space:nowrap}
+.adminRow>span{font-size:9px;color:#697466;overflow-wrap:anywhere}
+.adminThumb{width:44px;height:48px;object-fit:cover;float:left;margin-right:12px;background:#f0eee5;border-radius:2px}
+.adminActions{display:flex;gap:7px;flex-wrap:wrap}
+.adminActions button{font-size:9px;text-transform:uppercase;letter-spacing:.08em;border:1px solid #dfe2d7;padding:8px 10px;color:#38523b}
+.adminActions button:last-child{color:#8d4940}
+.adminActions button:hover{background:#f2f3ec}
+.adminRow select{font-size:9px;padding:8px;margin-top:7px}
+.adminEmpty{padding:30px 0;color:#858a80;font-size:11px}
+@media(max-width:900px){
+ .adminPage{padding:24px 18px 60px}
+ .adminHeader{align-items:flex-start;flex-direction:column}
+ .adminHeaderRight{justify-content:space-between;width:100%}
+ .adminStats{gap:9px}
+ .adminStats article{padding:17px 14px}
+ .adminRow{grid-template-columns:minmax(0,1.4fr) minmax(65px,.5fr) minmax(95px,.8fr);gap:12px}
+ .adminRow>*:nth-child(4){grid-column:2/-1}
+ .adminRow>*:nth-child(5){grid-column:1/-1}
+ .productRow>span:nth-of-type(2){grid-column:auto}
+}
+@media(max-width:560px){
+ .adminStats{grid-template-columns:1fr}
+ .adminStats article{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 15px}
+ .adminStats article>span{grid-column:1}
+ .adminStats article strong{grid-column:2;grid-row:1/3}
+ .adminStats article small{grid-column:1}
+ .adminForm{grid-template-columns:1fr}
+ .adminForm textarea{grid-column:auto}
+ .adminPanel{padding:18px 14px}
+ .adminPanelHead{align-items:flex-start}
+ .adminRow{grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:16px 0}
+ .adminRow>strong{justify-self:end}
+ .adminRow>span{grid-column:1/-1}
+ .adminRow>*:nth-child(4){grid-column:1/-1}
+ .adminRow>*:nth-child(5){grid-column:1/-1}
+ .adminActions{margin-top:4px}
+}
+@media(prefers-reduced-motion:reduce){.adminPage *{transition:none!important}}
