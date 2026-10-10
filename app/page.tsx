@@ -44,5 +44,5 @@ export default function Home(){
     form?.addEventListener("submit",onSubmit as EventListener);
     return ()=>{window.removeEventListener("scroll",onScroll);io.disconnect();form?.removeEventListener("submit",onSubmit as EventListener);};
   },[]);
-  return <div dangerouslySetInnerHTML={{__html:HOME_HTML}}/>;
+  return <div className="verdixaHome" dangerouslySetInnerHTML={{__html:HOME_HTML}}/>;
 }
