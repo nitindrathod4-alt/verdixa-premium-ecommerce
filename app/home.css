@@ -132,3 +132,8 @@
  .verdixaHome footer .foot-grid>div:first-child{grid-column:1/-1}
  .verdixaHome footer .foot-bottom{gap:12px;flex-direction:column;align-items:flex-start}
 }
+
+/* Sale price treatment — homepage product cards */
+.verdixaHome .home-sale-price{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#244b34;font-weight:700}
+.verdixaHome .home-sale-price del{font-size:.78em;font-weight:400;color:#85877d;opacity:.95}
+.verdixaHome .home-sale-price small{display:inline-flex;align-items:center;border-radius:999px;background:#f1dfcf;color:#813e2c;padding:5px 8px;font:700 9px/1 "Manrope",Arial,sans-serif;letter-spacing:.06em}
