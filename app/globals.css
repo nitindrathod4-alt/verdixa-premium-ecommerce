@@ -2573,3 +2573,95 @@ html,body{max-width:100%;overflow-x:hidden}
 .block.products .prod-card .home-product-actions .btn-primary,.block.products .prod-card .home-product-actions .btn-secondary{width:100%;min-height:44px;padding:12px 10px;font-size:8px;letter-spacing:.09em}
 @media(max-width:900px){.block.products .prod-card .frame{height:390px}.block.products .prod-card .prod-title-row,.block.products .prod-card .prod-meta,.block.products .prod-card>.desc,.block.products .prod-card .home-product-actions{margin-left:18px;margin-right:18px}}
 @media(max-width:580px){.block.products .prod-card .frame{height:390px}.block.products .prod-card .home-product-actions{grid-template-columns:1fr 1fr}}
+
+
+/* VERDIXA SHOP — editorial product experience v2 */
+.vxShopIntro{grid-template-columns:1fr 1fr;min-height:520px;background:#f4f2e8}
+.vxShopIntroCopy{padding:clamp(38px,6.2vw,88px) clamp(22px,6vw,82px) 27px}
+.vxShopIntro h1{font-size:clamp(64px,7.8vw,104px);line-height:.84;letter-spacing:-.065em;margin:34px 0 25px}
+.vxShopIntro h1 em{color:#829875}
+.vxShopIntroCopy>p{max-width:350px;font-size:12px;line-height:2}
+.vxShopExplore{display:inline-flex;align-items:center;gap:15px;margin-top:24px;padding:12px 0;border-bottom:1px solid #9ba994;color:#24472f;font-size:10px;letter-spacing:.04em}
+.vxShopExplore svg{transition:transform .2s}.vxShopExplore:hover svg{transform:translate(3px,-3px)}
+.vxShopIntroFoot{padding-top:30px}
+.vxShopIntroVisual{background:radial-gradient(ellipse at 47% 44%,#d6d9b6 0,#9aaa83 29%,#577855 59%,#1b422e 100%)}
+.vxShopSun{width:min(28vw,310px);border-color:#f7f2d788;box-shadow:0 0 0 20px #ffffff0c,0 0 0 46px #ffffff08,0 0 0 76px #ffffff05}
+.vxShopOrbit{position:absolute;border:1px solid #f4f0d84f;border-radius:50%;width:72%;aspect-ratio:1;left:14%;top:14%;transform:rotate(-26deg) scaleY(.72)}
+.vxShopOrbit.orbitTwo{width:56%;left:22%;top:22%;transform:rotate(36deg) scaleY(.82)}
+.vxShopLeaf{filter:drop-shadow(0 22px 17px #193a2a38)}
+.vxShopLeaf.leafA{left:23%;top:20%;transform:rotate(-35deg) scale(1.02)}
+.vxShopLeaf.leafB{left:49%;top:22%;transform:rotate(42deg) scale(.9)}
+.vxShopLeaf.leafC{left:38%;top:42%;transform:rotate(-70deg) scale(.76)}
+.vxShopVisualStamp{position:absolute;top:24px;right:25px;color:#f4f0dc;font:italic 18px "Cormorant Garamond",Georgia,serif;letter-spacing:.08em}
+.vxShopBar{padding-top:24px;padding-bottom:24px;background:#fbfaf5}
+.vxShopBar b{font-size:20px}
+.vxShopGrid{max-width:1600px;margin:0 auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,2.7vw,38px);padding:clamp(38px,5vw,72px) clamp(18px,5vw,76px) 92px}
+.vxShopCard{border:0;background:transparent;overflow:visible;box-shadow:none}
+.vxShopCard:hover{transform:translateY(-3px);box-shadow:none}
+.vxShopImageStage{height:clamp(330px,37vw,470px);border-radius:150px 150px 2px 2px;isolation:isolate}
+.vxShopCard.product-pure-moringa-powder .vxShopImageStage{background:radial-gradient(ellipse at 50% 36%,#e6eadb 0,#cad6bc 48%,#a0b596 100%)}
+.vxShopCard.product-hibiscus-herbal-infusion .vxShopImageStage{background:radial-gradient(ellipse at 50% 36%,#f7e7df 0,#e8c9c0 48%,#cb9a90 100%)}
+.vxShopCard.product-butterfly-pea-blue-tea .vxShopImageStage{background:radial-gradient(ellipse at 50% 36%,#e5eff0 0,#c2d8dc 48%,#8daeb9 100%)}
+.vxShopImageLink{inset:30px 22px 31px}
+.vxShopImageLink img{object-fit:contain;padding:10px;mix-blend-mode:multiply}
+.vxShopIndex{top:20px;left:20px;font-size:9px;color:#2e5038}
+.vxShopIndex i{font-style:normal;color:#6d816a}
+.vxShopImageTag{position:absolute;top:21px;left:65px;z-index:2;font-size:7px;letter-spacing:.13em;color:#405b43}
+.vxSaleTag{top:auto;right:14px;bottom:17px;border:1px solid #ffffff8c;background:#fffaf0dd;backdrop-filter:blur(8px);border-radius:99px;padding:8px 11px;font-size:8px}
+.vxQuickAdd{right:14px;bottom:58px;width:39px;height:39px;box-shadow:0 5px 18px #163d2930}
+.vxImageCaption{bottom:20px;left:20px;font-size:8px;letter-spacing:.19em}
+.vxShopCardInfo{padding:23px 3px 0}
+.vxShopCardTop{font-size:8px;letter-spacing:.08em}
+.vxShopCardTop button{font-size:9px;border-bottom:1px solid #d7dfd0;padding-bottom:4px}
+.vxShopProductName{margin:17px 0 9px;min-height:58px}
+.vxShopProductName h2{font-size:clamp(25px,2.45vw,34px);line-height:.98;max-width:90%}
+.vxShopProductName>span{font-size:16px}
+.vxShopDescription{font-size:11px;line-height:1.85;min-height:42px;max-width:360px;margin-bottom:20px}
+.vxShopPriceRow{padding:16px 0}
+.vxShopPriceRow strong{font-size:17px}
+.vxShopPriceRow del{font-size:11px}
+.vxShopPriceRow>span{font-size:7px;max-width:115px;line-height:1.5}
+.vxShopActions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}
+.vxShopAddButton,.vxShopBuyButton{margin:0;width:100%;min-height:46px;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 9px;font-size:9px;letter-spacing:.04em;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.vxShopAddButton{background:#244b34;color:#fffdf5;border:1px solid #244b34}
+.vxShopAddButton:hover{background:#163b29}
+.vxShopBuyButton{background:transparent;color:#244b34;border:1px solid #9baa94}
+.vxShopBuyButton:hover{background:#e9eee2;border-color:#244b34}
+.vxShopDetails{background:#f4f4eb;padding:15px;margin-top:16px}
+.vxShopPromise{background:#173b29;position:relative;overflow:hidden}
+.vxShopPromise:after{content:"V";position:absolute;right:4%;top:-.35em;font:italic 360px/.9 "Cormorant Garamond",Georgia,serif;color:#ffffff07;pointer-events:none}
+.vxShopPromise>div{display:grid;gap:10px}
+.vxShopPromise>div span{display:flex;align-items:center;gap:7px;color:#dbe3d3;font-size:9px;letter-spacing:.04em}
+.vxShopPromise>div span svg{color:#b8c7a8}
+@media(max-width:900px){
+ .vxShopIntro{grid-template-columns:1fr 1fr;min-height:430px}
+ .vxShopIntroCopy{min-height:0;padding:42px 24px 24px}
+ .vxShopIntro h1{font-size:clamp(55px,8vw,76px)}
+ .vxShopIntroVisual{min-height:430px}
+ .vxShopGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;padding:40px 24px 65px}
+ .vxShopImageStage{height:clamp(310px,48vw,420px)}
+ .vxShopPromise{grid-template-columns:1fr 1.3fr 1fr}
+ .vxShopPromise>div{grid-column:auto}
+}
+@media(max-width:620px){
+ .vxShopIntro{grid-template-columns:1fr}
+ .vxShopIntroCopy{min-height:390px;padding:39px 23px 23px}
+ .vxShopIntro h1{font-size:68px}
+ .vxShopIntroVisual{min-height:290px}
+ .vxShopGrid{grid-template-columns:minmax(0,1fr);max-width:480px;padding:30px 20px 55px;gap:43px}
+ .vxShopImageStage{height:min(112vw,470px);border-radius:160px 160px 2px 2px}
+ .vxShopCardInfo{padding:20px 2px 0}
+ .vxShopProductName{min-height:0}
+ .vxShopProductName h2{font-size:31px}
+ .vxShopDescription{min-height:0}
+ .vxShopActions{grid-template-columns:1fr 1fr}
+ .vxShopPromise{grid-template-columns:1fr;padding:62px 25px;gap:19px}
+ .vxShopPromise>div{grid-column:auto}
+ .vxShopPromise:after{font-size:230px;right:-3%}
+}
+@media(max-width:380px){
+ .vxShopGrid{padding-left:15px;padding-right:15px}
+ .vxShopActions{gap:6px}
+ .vxShopAddButton,.vxShopBuyButton{font-size:8px;padding:11px 5px;gap:5px}
+ .vxShopImageTag{font-size:6px;letter-spacing:.08em}
+}
