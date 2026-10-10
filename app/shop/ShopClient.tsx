@@ -44,7 +44,7 @@ export default function ShopClient(){
     <div className="vxShopImageStage">
      <span className="vxShopIndex">0{index+1}<i> / 03</i></span>
      <span className="vxShopImageTag">{index===0?"THE GREEN RITUAL":index===1?"FLORAL & BRIGHT":"CALM IN BLUE"}</span>
-     {p.compareAtPrice&&<span className="vxSaleTag">SAVE ₹{p.compareAtPrice-p.price}</span>}
+     {p.compareAtPrice&&<span className="vxSaleTag">SAVE ₹{p.compareAtPrice-p.price} · {Math.round(((p.compareAtPrice-p.price)/p.compareAtPrice)*100)}% OFF</span>}
      <Link href={"/products/"+p.slug} className="vxShopImageLink" aria-label={"View "+p.name}>
       {p.imageUrl?<img src={p.imageUrl} alt={p.name}/>:<div className="vxBotanicalPlaceholder"><Leaf size={45}/></div>}
      </Link>
